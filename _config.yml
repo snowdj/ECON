@@ -4,9 +4,9 @@ header-img: img/home-bg2.jpg
 email: hanjo.odendaal@eighty20.co.za
 description: "Eighty20 Blog"
 baseurl: ""
-url: http://hanjostudy.github.io
+url: blogeighty20.github.io
 twitter_username: safactaday
-github_username:  HanjoStudy
+github_username:  Eighty20
 facebook_username:  Eighty20-291937880846403
 future: TRUE
 gems:
