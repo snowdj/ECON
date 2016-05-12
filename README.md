@@ -1,0 +1,1 @@
+#Welcome one, welcome all to the circus of amazement which is Data Analytics

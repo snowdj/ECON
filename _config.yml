@@ -1,0 +1,28 @@
+# Site settings
+title: Eighty20 Analytics Blog
+header-img: img/home-bg2.jpg
+email: hanjo.odendaal@eighty20.co.za
+description: "Eighty20 Blog"
+baseurl: ""
+url: http://hanjostudy.github.io
+twitter_username: safactaday
+github_username:  HanjoStudy
+facebook_username:  Eighty20-291937880846403
+future: TRUE
+gems:
+  - jekyll-feed
+comments :
+  provider : disqus
+  disqus :
+    short_name : eighty20blog
+analytics :
+  provider : google
+  google : 
+      tracking_id : 'UA-70616211-1'
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
