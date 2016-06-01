@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-04-04 14:38:17
-header-img: "img/pokemon.jpg"
+header-img: "img/home-bg2.jpg"
 comments: true
 subtitle: "A cluster analysis investigation"
 title: "Gotta catch them all"
