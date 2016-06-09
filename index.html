@@ -19,8 +19,8 @@ description: "while(!(succeed == try ()));"
             {% if post.tags != empty %}
             |
             {% for tag in post.tags %}
-            <a class="codinfox-tag-mark badge" href="/blog/tag/#{{ tag | slugify }}" >
-						<span class="glyphicon glyphicon-tag" aria-hidden="true">{{ tag }}</span>
+			<a class="codinfox-tag-mark badge" href="/blog/tag/#{{ tag | slugify }}" >
+				<span class="glyphicon glyphicon-tag" aria-hidden="true"> </span> &nbsp; {{ tag }}
 			</a>
             {% endfor %}
             {% endif %}
