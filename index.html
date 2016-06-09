@@ -13,6 +13,17 @@ description: "while(!(succeed == try ()));"
             {{ post.subtitle }}
         </h3>
         {% endif %}
+		
+		<span class="post-date">
+            {{ post.date | date_to_string }}
+            {% if post.tags != empty %}
+            |
+            {% for tag in post.tags %}
+            <a class="codinfox-tag-mark" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+            {% endfor %}
+            {% endif %}
+        </span>
+		
     </a>
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
