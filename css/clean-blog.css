@@ -400,6 +400,8 @@ body {
     font-size: 15px;
     border-radius: 7px;
     padding-bottom: 5px;
+    padding-right: 5px;
     padding-top: 5px;
     color: #ffffff;
+    font-style: italic;
 }
