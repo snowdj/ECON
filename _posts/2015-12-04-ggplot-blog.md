@@ -7,9 +7,8 @@ subtitle: "An exploration of ggplot2"
 title: "Body Temperature Series of Two Beavers"
 author: "Hanjo Odendaal"
 output: html_document
-tag:
-- r
-- ggplot2
+category: Library Overview
+tags: [R, ggplot2]
 ---
 
 This short post will explore a funny dataset that forms part of R's `dataset` library. The dataset will loaded out of interest of its content as well as using it to enagage with Hadley Wickhams's [ggplot2](http://docs.ggplot2.org/current/#) package. The dataset that will be used to explore `ggplot2` contains two time series of temperatures of beavers. The data was first presented in Reynolds (1994).

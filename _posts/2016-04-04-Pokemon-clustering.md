@@ -7,8 +7,8 @@ subtitle: "A cluster analysis investigation"
 title: "Gotta catch them all"
 author: "Hanjo Odendaal"
 output: html_document
-category: Data_science
-tags: [R, clustering]
+category: Technique Review
+tags: [R, Clustering]
 ---
 
 # Introduction
