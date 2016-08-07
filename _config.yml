@@ -21,11 +21,6 @@ analytics :
       tracking_id : 'UA-70616211-1'
 
 # Build settings
-markdown: kramdown
-permalink: pretty
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
-kramdown:
-  input: GFM
-  syntax_highlighter: pygments
