@@ -28,4 +28,4 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter: pygments
