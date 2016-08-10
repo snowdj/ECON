@@ -1,6 +1,14 @@
-PostBlog<-function(file_in,dir="/home/hanjo/HanjoStudy.github.io/",img="home-bg2.jpg", subtitle=""){
+PostBlog<-function(file_in, dir="/t-drive/Internal/Stats_team/Blog", img="home-bg2.jpg", subtitle="", category, tags){
 	library(knitr)
 	library(yaml)
+  
+  if(missing(category)|missing(tags))
+  {
+    cat("Please provide a category and tag for your post before it can be processed\n")
+    cat("Category: ", !missing(category), "\n")
+    cat("Tags: ", !missing(tags), "\n")
+    return(cat("----------------------------------------------"))
+  }
 
 	KnitPost <- function(input, base.url = "/") {
 	  require(knitr)
@@ -35,12 +43,21 @@ PostBlog<-function(file_in,dir="/home/hanjo/HanjoStudy.github.io/",img="home-bg2
 	header <- parse_yaml_header(infile)
 	if(subtitle!="")
 	{
-	add_head<-c("---","layout: post",paste("date: ",Sys.time(),sep=""),paste("header-img: \"img/",img,"\"",sep=""),
-	"comments: true",paste("subtitle: \"",subtitle,"\"",sep=""))
+	add_head<-c("---","layout: post",
+	            paste0("date: ",Sys.time()),
+	            paste0("header-img: \"img/",img,"\""),
+	            "comments: true",
+	            paste0("subtitle: \"",subtitle,"\""),
+	            paste0("category: ",category),
+	            paste0("tags: [",paste0(tags, collapse = ", "),"]"))
 	}else
 	{
-	add_head<-c("---","layout: post",paste("date: ",Sys.time(),sep=""),paste("header-img: \"img/",img,"\"",sep=""),
-	"comments: true")
+	  add_head<-c("---","layout: post",
+	              paste0("date: ",Sys.time()),
+	              paste0("header-img: \"img/",img,"\""),
+	              "comments: true",
+	              paste0("category: ",category),
+	              paste0("tags: [",paste0(tags, collapse = ", "),"]"))
 	}
 	header<-c(add_head,header[-c(1,4)])
 	skip_lines <- length(header)

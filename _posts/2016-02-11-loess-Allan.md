@@ -7,6 +7,8 @@ subtitle: "Span throwing a spanner in the works?"
 title: "Automated parameter selection for LOESS regression"
 author: "Allan Davids"
 output: html_document
+category: Technique Review
+tags: [R, Regression]
 ---
 
 Typically, when we want to understand the relationship between two variables we simply regress one on the other, plot the points and fit a linear trend line. To illustrate this, we use the *EuStockMarkets* datset pre-loaded in R. The data-set contains the daily closing prices of major European stock indices. We will focus on the FTSE. Below, we regress the FTSE daily closing price data on time (what we will call an "Index") and plot a linear trend. I use the *stats* package to execute the regressions and the *ggplot2* package to generate the plots. I also use the *fANCOVA* package, but more about this later. As we expect, we see a clear linear trend over time.

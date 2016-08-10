@@ -7,6 +7,8 @@ subtitle: "So fresh and so clean..."
 title: "Cleaning up messy R code"
 author: "Allan Davids"
 output: html_document
+category: Package Exploration
+tags: [R]
 ---
 
 Are you the type of person that likes your code to be identically indented? for spacing to be consistent throughout your script, everything to be clear and aligned, read easily and just look *nice*? Well, I am. Often I get tremendously untidy code from other coders (those bandits), and it takes me way too much time to understand where this for loop starts, where that function ends etc. Reading this code gets especially confusing if the person for example uses nested for loops (*for loop inception - a for in a for in a for...*). Well I came across a package in R that eliminated this problem all together, called `formatR` - see <https://cran.r-project.org/web/packages/formatR/index.html>. To illustrate how this package works, I use a section of code from Prof Hedibert Freitas Lopes, found here: <http://hedibert.org/wp-content/uploads/2014/06/Application2-stochasticvolatility-R.txt>. Now if you've ever seen the code Prof Lopes (gratuitously) posts, you'll know it's very neat. So to illustrate how the `formatR` works, I mess it up a bit, playing with the spaces and the indentation. Below is the resulting code.
