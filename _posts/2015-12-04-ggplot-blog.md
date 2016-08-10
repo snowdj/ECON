@@ -7,7 +7,7 @@ subtitle: "An exploration of ggplot2"
 title: "Body Temperature Series of Two Beavers"
 author: "Hanjo Odendaal"
 output: html_document
-category: Library Overview
+category: Package Exploration
 tags: [R, ggplot2]
 ---
 
