@@ -45,7 +45,7 @@ variables.
 
 You are probably asking - what distance are you talking about here? We will use the `dist()` function in R to calculate the euclidean distance: 
 
-![Euclidean dit](Pokemon_fig/euclidean.JPG)
+![Euclidean dit](/_rmd/Pokemon_fig/euclidean.JPG)
 
 where **q** and **p** are the observations and **N** is the number of variables. Easy enough right? I will be using *ward*'s method to cluster my objects as it is the default setting for *Hierarchical agglomerative clustering* for the `HCPC` function in `library(FactoMineR)`
 
