@@ -1,7 +1,13 @@
 ---
+layout: post
+date: 2016-08-21 15:50:33
+header-img: "img/home-bg2.jpg"
+comments: true
+subtitle: "A clustering approach in R"
+category: Technique Review
+tags: [R, Clustering]
 title: "Gotta catch them all"
 author: "Hanjo Odendaal"
-date: "2/18/2016"
 output: html_document
 ---
 
@@ -46,37 +52,62 @@ where **q** and **p** are the observations and **N** is the number of variables.
 # Lets go catch our pokemon
 To collect the data on all the first generation pokemon, I employ Hadley Wickam's [rvest](https://cran.r-project.org/web/packages/rvest/index.html) package. I find it very intuitive and can handle all of my needs in collecting and extracting the data from a pokemon [wiki](http://bulbapedia.bulbagarden.net/wiki/Main_Page). I will grab all the Pokemon up until to Gen II, which constitutes 251 individuals. I did find the website structure a bit of a pain as each pokemon had very different looking web pages. But, with some manual hacking, I eventually got the data in a nice format.
 
-```{r,include = FALSE}
-options(warn = -1)
-library(knitr)
-library(pander)
-panderOptions('digits', 2)
-panderOptions('round', 2)
-panderOptions('table.style', 'rmarkdown')
 
-```
 
 The cleaned data looks as follows:
-```{r, echo=T}
+
+{% highlight r %}
 library(ggplot2)
 library(FactoMineR)
 all_pokemon <- download.file("https://raw.githubusercontent.com/Eighty20/eighty20.github.io/master/_rmd/Post_data/All_pokemon.csv", destfile = "/tmp/Pokemon.csv", method = "curl")
 all_pokemon <- read.csv("/tmp/Pokemon.csv", stringsAsFactors = F)
 cat("Dimensions for pokemon data is :",dim(all_pokemon))
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## Dimensions for pokemon data is : 251 15
+{% endhighlight %}
+
+
+
+{% highlight r %}
 head(all_pokemon)
-```
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##   Nat    Pokemon HP Atk Def  SA  SD Spd Total Type.I Type.II    Gender
+## 1   1  Bulbasaur 45  49  49  65  65  45   318  Grass  Poison M (87.5%)
+## 2   2    Ivysaur 60  62  63  80  80  60   405  Grass  Poison M (87.5%)
+## 3   3   Venusaur 80  82  83 100 100  80   525  Grass  Poison M (87.5%)
+## 4   4 Charmander 39  52  43  60  50  65   309   Fire         M (87.5%)
+## 5   5 Charmeleon 58  64  58  80  65  80   405   Fire         M (87.5%)
+## 6   6  Charizard 78  84  78 109  85 100   534   Fire  Flying M (87.5%)
+##   Evolves.From lvl_up Evolves.Into
+## 1           -- Lv. 16      Ivysaur
+## 2    Bulbasaur Lv. 32     Venusaur
+## 3      Ivysaur     --           --
+## 4           -- Lv. 16   Charmeleon
+## 5   Charmander Lv. 36    Charizard
+## 6   Charmeleon     --           --
+{% endhighlight %}
 
 For those of you who know pokemon well, will also know that certain pokemon have only one evolution stage. We remove them in order to not intervere with our clustering at a later stage.
 
-```{r}
-Evo_none <- all_pokemon[which(all_pokemon$Evolves.From == "--" & all_pokemon$Evolves.Into=="--"), ]
-```
 
-The following pokemon were removed from the dataset: `r paste(Evo_none[,2],collapse=", ")`
+{% highlight r %}
+Evo_none <- all_pokemon[which(all_pokemon$Evolves.From == "--" & all_pokemon$Evolves.Into=="--"), ]
+{% endhighlight %}
+
+The following pokemon were removed from the dataset: Farfetch'd, Kangaskhan, Pinsir, Tauros, Lapras, Ditto, Aerodactyl, Articuno, Zapdos, Moltres, Mewtwo, Mew, Unown, Girafarig, Dunsparce, Qwilfish, Shuckle, Heracross, Corsola, Delibird, Skarmory, Stantler, Smeargle, Miltank, Raikou, Entei, Suicune, Lugia, Ho-oh, Celebi
 
 The next step was to aggregate all the stage 2 statistics for the stage 1 evolution pokemon. This results in a nice wide dataset of variables we are able to use in our clustering. I am hoping to extract some sense of strenghts in pokemon, not only by their stage 1 statistics, but also perhaps their potential to become awesome assets later. One hopeful example of this would be everyone's favourite: magikarp.
 
-```{r}
+
+{% highlight r %}
 Evo_1 <- all_pokemon[which(all_pokemon$Evolves.From=="--" & all_pokemon$Evolves.Into!="--"), ]
 Evo_2 <- all_pokemon[which(all_pokemon$Evolves.From!="--"), ]
 ##### Housekeeping - organise data into cluster format #####
@@ -108,64 +139,76 @@ selected_var<-c("HP.lv1","HP.lv2",
 
 Matched_pokemon <- Matched_pokemon[ ,names(Matched_pokemon)%in%selected_var]
 row.names(Matched_pokemon) <- pokemon
-```
+{% endhighlight %}
 
 The data has been constructed to capture characteristics of a specific pokemon at both the first and second level of evolution. It is these variables that we will be using in our clustering. The `total` column acts as a general indicator of pokemon's attributes:
-```{r,echo=F,results='asis'}
-pandoc.table(head(Matched_pokemon), format="rmarkdown", split.table=100)
-```
+
+|      &nbsp;      |  HP.lv1  |  Atk.lv1  |  Def.lv1  |  SA.lv1  |  SD.lv1  |  Spd.lv1  |
+|:----------------:|:--------:|:---------:|:---------:|:--------:|:--------:|:---------:|
+|    **Ekans**     |    30    |    60     |    44     |    40    |    54    |    55     |
+|   **Spinarak**   |    40    |    60     |    40     |    40    |    40    |    30     |
+|  **Chikorita**   |    45    |    49     |    65     |    49    |    65    |    45     |
+|  **Charmander**  |    39    |    52     |    43     |    60    |    50    |    65     |
+|   **Totodile**   |    50    |    65     |    64     |    44    |    48    |    43     |
+|     **Seel**     |    65    |    45     |    55     |    45    |    70    |    45     |
+
+Table: Table continues below
+
+ 
+
+|      &nbsp;      |  Total.lv1  |  Type.I.lv1  |  lvl_up.lv1  |  HP.lv2  |  Atk.lv2  |
+|:----------------:|:-----------:|:------------:|:------------:|:--------:|:---------:|
+|    **Ekans**     |     283     |    Poison    |      22      |    60    |    85     |
+|   **Spinarak**   |     250     |     Bug      |      22      |    70    |    90     |
+|  **Chikorita**   |     318     |    Grass     |      16      |    60    |    62     |
+|  **Charmander**  |     309     |     Fire     |      16      |    58    |    64     |
+|   **Totodile**   |     314     |    Water     |      18      |    65    |    80     |
+|     **Seel**     |     325     |    Water     |      34      |    90    |    70     |
+
+Table: Table continues below
+
+ 
+
+|      &nbsp;      |  Def.lv2  |  SA.lv2  |  SD.lv2  |  Spd.lv2  |  Total.lv2  |
+|:----------------:|:---------:|:--------:|:--------:|:---------:|:-----------:|
+|    **Ekans**     |    69     |    65    |    79    |    80     |     438     |
+|   **Spinarak**   |    70     |    60    |    60    |    40     |     390     |
+|  **Chikorita**   |    80     |    63    |    80    |    69     |     414     |
+|  **Charmander**  |    58     |    80    |    65    |    80     |     405     |
+|   **Totodile**   |    80     |    59    |    63    |    58     |     405     |
+|     **Seel**     |    80     |    70    |    95    |    70     |     475     |
 
 For those curious to see the pokemon which ended up in our dataset. Here they are:
-```{r,echo=F}
-pokemon
-```
+
+{% highlight text %}
+##  [1] "Ekans"      "Spinarak"   "Chikorita"  "Charmander" "Totodile"  
+##  [6] "Seel"       "Doduo"      "Phanpy"     "Dratini"    "Diglett"   
+## [11] "Voltorb"    "Spearow"    "Pineco"     "Sentret"    "Oddish"    
+## [16] "Zubat"      "Psyduck"    "Snubbull"   "Magikarp"   "Gastly"    
+## [21] "Houndour"   "Drowzee"    "Bulbasaur"  "Smoochum"   "Kabuto"    
+## [26] "Abra"       "Weedle"     "Krabby"     "Chinchou"   "Ledyba"    
+## [31] "Machop"     "Slugma"     "Magnemite"  "Cubone"     "Caterpie"  
+## [36] "Grimer"     "Nidoran(F)" "Nidoran(M)" "Hoothoot"   "Remoraid"  
+## [41] "Omanyte"    "Paras"      "Meowth"     "Pidgey"     "Swinub"    
+## [46] "Poliwag"    "Mankey"     "Larvitar"   "Wooper"     "Cyndaquil" 
+## [51] "Ponyta"     "Rhyhorn"    "Sandshrew"  "Horsea"     "Goldeen"   
+## [56] "Hoppip"     "Slowpoke"   "Tentacool"  "Teddiursa"  "Squirtle"  
+## [61] "Bellsprout" "Koffing"    "Natu"
+{% endhighlight %}
 
 One of the interesting variables that forms part of the data is the crucial question every trainer asks himself when catching pokemon - which types are the strongest? For each of my ~60 pokemon I use a boxplot to evaluate the relative strenght of a type. The data was normalized per level of evolution to ease plotting and interpretation.
-```{r, dpi=200,fig.height=5,fig.width=8,fig.align="center", echo = F}
-library(reshape2)
-#http://www.color-hex.com/ - nice for color matching
-
-# Transform from wide to long data
-type <- melt(Matched_pokemon[,c(8,7,16)],id.vars = "Type.I.lv1")
-type$Type.I.lv1 <- as.factor(type$Type.I.lv1)
-
-#Normalize the data for cross comparison
-type$norm <- do.call(c,tapply(type[,3],type[,2],function(x){(x-min(x))/(max(x)-min(x))}))
-
-# Organise the data
-l <- aggregate(type$norm,by=list(type$Type.I.lv1),mean)
-type$Type.I.lv1 <- factor(type$Type.I.lv1,
-                        levels = as.character(l[order(l[,2]),][,1]), 
-                        ordered = TRUE)
-
-#Plot
-ggplot(aes(x = as.factor(Type.I.lv1), y = norm), 
-      data = type) + 
-      geom_boxplot(aes(fill =as.factor(variable) ))+
-      theme_bw()+
-      theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-      scale_x_discrete(name="Pokemon Type") +
-      scale_y_continuous(name="Total Points (Normalised)")+
-      scale_fill_manual(name="Evolution\nstage",
-                         labels=c("1", "2"),
-                         values=c("#0687EF", "#F04877"))
-```
+<img src="/figures/Pokemon_clustering/unnamed-chunk-7-1.png" title="center" alt="center" style="display: block; margin: auto;" />
 Good old bug pokemons don't catch a break, with the median `total` points being the lowest in both stages of evolution. For Normal, Poison and Water types, there seems to be a definite advantage to evolve in order to 'up' the overall statistics. An interesting type to evaluate is the Fire type pokemon. In the first stage of evolution this type of pokemon seems to have an overall advantage, but once the pokemon starts evolving, the advantage dissipates.
 
 One of the concerns I had was the class imbalance that might be present in the pokemon type. 
-```{r,echo=F, dpi=200,fig.height=5,fig.width=10,fig.align="center"}
-ggplot(as.data.frame(table(type$Type.I.lv1)), aes(x=Var1, y = Freq,fill=Var1)) +
-  scale_x_discrete(name="Pokemon Type")+
-  geom_bar(stat="identity",colour="darkgreen")+
-  guides(fill=FALSE)+
-  theme_bw()
-```
+<img src="/figures/Pokemon_clustering/unnamed-chunk-8-1.png" title="center" alt="center" style="display: block; margin: auto;" />
 The graph clearly points this out, so instead of adding the pokemon types into the analysis, they will be included as supplementary variable.
 
 # Going Prof Elm and analysing pokemon
 If you don't know who Prof Elm is, this [link](http://bulbapedia.bulbagarden.net/wiki/Professor_Elm) should help. To start our exploration into the pokemon dataset, we will conduct a *multiple factor analysis*. I find the flexibility of this function being able to conduct `MCA` and `PCA` in one go very helpful. It also has incredible plotting functions that helps to visually analyse your data.
 
-```{r,dpi=200,fig.height=5,fig.width=10,fig.align="center"}
+
+{% highlight r %}
 Matched_pokemon$Type.I.lv1 <- as.factor(Matched_pokemon$Type.I.lv1)
 
 res <- MFA(Matched_pokemon,group = c(6,1,1,7,1),type=c(rep("s",2),"n",rep("s",2)),
@@ -173,113 +216,155 @@ res <- MFA(Matched_pokemon,group = c(6,1,1,7,1),type=c(rep("s",2),"n",rep("s",2)
            num.group.sup = c(2,3,5),graph = F)
 
 plot(res,choix = "var", habillage = "group", cex=0.8, shadow = T)
-```
+{% endhighlight %}
+
+<img src="/figures/Pokemon_clustering/unnamed-chunk-9-1.png" title="center" alt="center" style="display: block; margin: auto;" />
 Here we see that there is a definite inverse relationship between the speed of a Pokemon and its attack statistics. I find the relationship between special attack and normal attack interesting. It would seem that you either specialise or defualt to having a strong overall attack. 
 
 The first thing to look at is the dispersion of the pokemon types to see how correlation all the pokemons are given their type.
-```{r,echo=F,dpi=200,fig.height=5,fig.width=10,fig.align="center"}
-plot(res,invisible = "ind")
-```
+<img src="/figures/Pokemon_clustering/unnamed-chunk-10-1.png" title="center" alt="center" style="display: block; margin: auto;" />
 It would seem that Ghost, Psyhic and Electric pokemon have different characteristics than those of Ground, Fighting and Bug for instance. 
 
 Given these factor groups, next it would be interesting to see which of the pokemon had the highest contribution to the construction dimension (Contribution 10). I also want to see the highest quality of representation (cos2>0.6). The *cos squared*, indicates the contribution of a component to the squared distance of the observation to the origin. i.e *cos squared* is an important contributor to find the components that are important to interpret both active and supplementary observations, [Abdi H, 2010](https://www.utdallas.edu/~herve/abdi-awPCA2010.pdf).
-```{r,echo=F,dpi=200,fig.height=9,fig.width=10,fig.align="center"}
-par(mfrow=c(2,1))
-plot(res,invisible = "quali",cex=0.8,select="cos2 0.6",title = "cos2 > 0.6")
-plot(res,invisible = "quali",habillage = "Type.I.lv1",select = "contrib 10",palette = palette(rainbow(15)),title = "Contribution 10")
-```
+<img src="/figures/Pokemon_clustering/unnamed-chunk-11-1.png" title="center" alt="center" style="display: block; margin: auto;" />
 
 Now that we have a clearer understanding of the data, its finally time to conduct the exciting cluster analysis on the data. With the `MFA` function, this is easily done by plugging the results directly into a hierarchical clustering algorithm. I decided to cut the tree to get 4 clusters in the end. Felt that these represented the different facets of pokemon quite well.
 
-```{r}
+
+{% highlight r %}
 res.hcpc <- HCPC(res, nb.clust=4, consol=TRUE, iter.max=10, min=3,
                  max=NULL, metric="euclidean", method="ward", order=TRUE,
                  graph.scale="inertia", nb.par=5, graph=F, proba=0.05, 
                  cluster.CA="rows",kk=Inf)
-```
+{% endhighlight %}
 
 Here we can see a 3D representation of the tree that was build: 
-```{r,echo=F,dpi=200,fig.height=6,fig.width=10,fig.align="center"}
-plot(res.hcpc,palette=palette(rainbow(5)))
-```
+<img src="/figures/Pokemon_clustering/unnamed-chunk-13-1.png" title="center" alt="center" style="display: block; margin: auto;" />
 
 I wanted to see the type dispersion among the clusters, perhaps hoping to see a coherent split of types among the clusters...
-```{r,digits=2,echo=F}
-x1 <- addmargins(table(res.hcpc$data.clust$Type.I.lv1,res.hcpc$data.clust$clust),margin = 1)
-x2 <- round(prop.table(table(res.hcpc$data.clust$Type.I.lv1,res.hcpc$data.clust$clust),margin = 1),2)
-```
 
-```{r,echo=F,results='asis'}
-pandoc.table(x1,format="rmarkdown")
-```
+
+
+|     &nbsp;     |  1  |  2  |  3  |  4  |
+|:--------------:|:---:|:---:|:---:|:---:|
+|    **Bug**     |  0  |  1  |  3  |  2  |
+|    **Dark**    |  1  |  0  |  0  |  0  |
+|   **Dragon**   |  0  |  0  |  1  |  0  |
+|  **Electric**  |  2  |  0  |  0  |  0  |
+|  **Fighting**  |  0  |  0  |  1  |  1  |
+|    **Fire**    |  2  |  0  |  2  |  0  |
+|   **Ghost**    |  1  |  0  |  0  |  0  |
+|   **Grass**    |  2  |  0  |  3  |  0  |
+|   **Ground**   |  0  |  0  |  1  |  4  |
+|    **Ice**     |  1  |  0  |  0  |  1  |
+|   **Normal**   |  0  |  1  |  5  |  2  |
+|   **Poison**   |  0  |  0  |  4  |  2  |
+|  **Psychic**   |  2  |  1  |  0  |  0  |
+|    **Rock**    |  1  |  0  |  0  |  2  |
+|   **Water**    |  3  |  3  |  4  |  4  |
+|    **Sum**     | 15  |  6  | 24  | 18  |
 
 
 Now comes the interesting bit, dissecting the data to see which pokemon clustered together and why they were thrown into the same cluster.
-```{r,echo = F}
-descr <- Map(cbind, res.hcpc$desc.var$quanti, list=names(res.hcpc$desc.var$quanti))
-descr <- lapply(descr, function(x) data.frame(x[,c("v.test","Mean in category","Overall mean","p.value")]))
-clust_dat <- res.hcpc$data.clust
-```
-## Cluster 1
-Ok, so the pokemon that ended up in cluster 1 was: `r rownames(clust_dat[which(clust_dat$clust==1),])`. This is quite an odd bunch if you know pokemon well. So, what was it that made them cluster together?
 
-```{r,echo=F,results='asis'}
-pandoc.table(data.frame(Stat=row.names(descr[[1]]),sapply(descr[[1]],function(x) as.numeric(as.character(x)))),format="rmarkdown",round=2)
-```
+## Cluster 1
+Ok, so the pokemon that ended up in cluster 1 was: Voltorb, Oddish, Psyduck, Gastly, Houndour, Bulbasaur, Smoochum, Abra, Slugma, Magnemite, Remoraid, Omanyte, Ponyta, Horsea, Natu. This is quite an odd bunch if you know pokemon well. So, what was it that made them cluster together?
+
+
+|   Stat    |  v.test  |  Mean.in.category  |  Overall.mean  |  p.value  |
+|:---------:|:--------:|:------------------:|:--------------:|:---------:|
+|  SA.lv1   |   6.2    |         77         |       49       |     0     |
+|  SA.lv2   |   5.9    |         99         |       71       |     0     |
+| Total.lv1 |   2.5    |        320         |      297       |   0.01    |
+|  Spd.lv1  |    2     |         61         |       52       |   0.05    |
+|  HP.lv1   |    -2    |         39         |       46       |   0.04    |
+|  Atk.lv1  |   -2.1   |         45         |       54       |   0.04    |
+|  Atk.lv2  |   -2.1   |         67         |       79       |   0.03    |
+|  HP.lv2   |   -2.3   |         61         |       70       |   0.02    |
 
 These Pokemon are specialist in special attacking moves. With the mean attack stat being almost 1/4 higher than the mean of all the other pokemon. These pokemon should be used when there is a type advantage!
 
 ## Cluster 2
-Moving onto cluster 2: `r rownames(clust_dat[which(clust_dat$clust==2),])`.
+Moving onto cluster 2: Seel, Drowzee, Chinchou, Ledyba, Hoothoot, Tentacool.
 
-```{r,echo=F,results='asis'}
-pandoc.table(data.frame(Stat=row.names(descr[[2]]),sapply(descr[[2]],function(x) as.numeric(as.character(x)))),format="rmarkdown",round=2)
-```
+
+|  Stat   |  v.test  |  Mean.in.category  |  Overall.mean  |  p.value  |
+|:-------:|:--------:|:------------------:|:--------------:|:---------:|
+| SD.lv1  |   4.8    |         75         |       46       |     0     |
+| SD.lv2  |   4.5    |        102         |       70       |     0     |
+| HP.lv2  |   2.8    |         89         |       70       |     0     |
+| Atk.lv2 |    -2    |         59         |       79       |   0.05    |
+| Atk.lv1 |   -2.4   |         37         |       54       |   0.02    |
 
 Although these pokemon have defensive capabilities, these capabilities are more pronounced than what we saw in cluster 1 where the individuals had a small significant advantage in a specialized situation.
 
 ## Cluster 3
-This cluster was the biggest with 24 Pokemon ending up in this category. The pokemon that forms part of this cluster is: `r rownames(clust_dat[which(clust_dat$clust==3),])`.
+This cluster was the biggest with 24 Pokemon ending up in this category. The pokemon that forms part of this cluster is: Ekans, Spinarak, Chikorita, Charmander, Totodile, Doduo, Dratini, Diglett, Spearow, Sentret, Zubat, Magikarp, Weedle, Caterpie, Nidoran(F), Nidoran(M), Meowth, Pidgey, Poliwag, Mankey, Cyndaquil, Hoppip, Squirtle, Bellsprout.
 
-```{r,echo=F,results='asis'}
-pandoc.table(data.frame(Stat=row.names(descr[[3]]),sapply(descr[[3]],function(x) as.numeric(as.character(x)))),format="rmarkdown",round=2)
-```
+
+|    Stat    |  v.test  |  Mean.in.category  |  Overall.mean  |  p.value  |
+|:----------:|:--------:|:------------------:|:--------------:|:---------:|
+|   SD.lv1   |   -2.1   |         41         |       46       |   0.04    |
+|  Def.lv1   |   -2.5   |         42         |       50       |   0.01    |
+|   HP.lv2   |   -2.5   |         63         |       70       |   0.01    |
+|   HP.lv1   |   -2.6   |         39         |       46       |   0.01    |
+|   SA.lv1   |   -2.7   |         40         |       49       |   0.01    |
+|   SD.lv2   |   -2.8   |         62         |       70       |     0     |
+|  Def.lv2   |    -3    |         64         |       75       |     0     |
+|   SA.lv2   |   -3.5   |         58         |       71       |     0     |
+| Total.lv1  |   -3.8   |        272         |      297       |     0     |
+| Total.lv2  |   -3.9   |        396         |      434       |     0     |
+| lvl_up.lv1 |   -4.5   |         20         |       25       |     0     |
 
 It would seem that these pokemon underscore on all statistics and should probably we avoided as strategic investments in your lineup.
 
 ## Cluster 4
-The last group that was identified were Pokemon that are all-rounders. `r rownames(clust_dat[which(clust_dat$clust==4),])` - have overall statistics which are higher than average, but does not specialize in any of the type specific advantages that exist in the Pokemon games.
-```{r,echo=F,results='asis'}
-pandoc.table(data.frame(Stat=row.names(descr[[4]]),sapply(descr[[4]],function(x) as.numeric(as.character(x)))),format="rmarkdown",round=2)
-```
+The last group that was identified were Pokemon that are all-rounders. Phanpy, Pineco, Snubbull, Kabuto, Krabby, Machop, Cubone, Grimer, Paras, Swinub, Larvitar, Wooper, Rhyhorn, Sandshrew, Goldeen, Slowpoke, Teddiursa, Koffing - have overall statistics which are higher than average, but does not specialize in any of the type specific advantages that exist in the Pokemon games.
+
+|    Stat    |  v.test  |  Mean.in.category  |  Overall.mean  |  p.value  |
+|:----------:|:--------:|:------------------:|:--------------:|:---------:|
+|  Atk.lv2   |   4.6    |        102         |       79       |     0     |
+|  Def.lv2   |   4.5    |         96         |       75       |     0     |
+|  Atk.lv1   |   4.3    |         70         |       54       |     0     |
+|  Def.lv1   |   4.3    |         68         |       50       |     0     |
+|   HP.lv1   |   3.5    |         56         |       46       |     0     |
+| lvl_up.lv1 |   3.1    |         30         |       25       |     0     |
+|   HP.lv2   |    3     |         81         |       70       |     0     |
+| Total.lv2  |   2.1    |        460         |      434       |   0.03    |
+|   SD.lv1   |    -2    |         40         |       46       |   0.05    |
+|   SA.lv1   |   -2.6   |         38         |       49       |   0.01    |
+|  Spd.lv2   |   -3.8   |         51         |       70       |     0     |
+|  Spd.lv1   |    -4    |         35         |       52       |     0     |
 
 ## Paragons of the clusters
 One of the nicest outputs of `HCPC` is the listed paragons per group. These paragons can be seen as the poster-child representative of each cluster as they lie closest to the center of the cluster:
 
 Cluster 1:
-```{r,echo=F,results='asis'}
-pandoc.table(res.hcpc$desc.ind$para[[1]],format="markdown")
-```
+
+|  Natu  |  Psyduck  |  Houndour  |  Remoraid  |  Bulbasaur  |
+|:------:|:---------:|:----------:|:----------:|:-----------:|
+|  0.67  |    1.2    |    1.3     |    1.3     |     1.4     |
 
 Cluster 2:
-```{r,echo=F,results='asis'}
-pandoc.table(res.hcpc$desc.ind$para[[2]],format="markdown")
-```
+
+|  Drowzee  |  Hoothoot  |  Seel  |  Tentacool  |  Chinchou  |
+|:---------:|:----------:|:------:|:-----------:|:----------:|
+|   0.88    |    1.1     |  1.2   |     1.7     |    1.7     |
 
 Cluster 3:
-```{r,echo=F,results='asis'}
-pandoc.table(res.hcpc$desc.ind$para[[3]],format="markdown")
-```
+
+|  Nidoran(M)  |  Zubat  |  Pidgey  |  Poliwag  |  Sentret  |
+|:------------:|:-------:|:--------:|:---------:|:---------:|
+|     0.57     |  0.65   |   0.71   |   0.83    |   0.89    |
 
 Cluster 4:
-```{r,echo=F,results='asis'}
-pandoc.table(res.hcpc$desc.ind$para[[4]],format="markdown")
-```
+
+|  Snubbull  |  Phanpy  |  Machop  |  Larvitar  |  Swinub  |
+|:----------:|:--------:|:--------:|:----------:|:--------:|
+|     1      |   1.1    |   1.1    |    1.1     |   1.2    |
 
 The output of the `HCPC` also allows us to see the individuals which are the most distance from all the other cluster. For brevity, ill leave this table out of this post. These most distant individuals are usually outliers which end up in the group to which it relates (relatively) the closest.
-```{r,echo=F}
-options(warn=0)
-```
+
 
 #Conclusion
 This post explored cluster analysis, or formally put, a tool in which a multivariate dataset can be explored and eventually be divided into subgroups of similar data based on some kind of proximity estimate. I used Pokemon data as I found it to be an interesting dataset to apply this kind of technique. I must say, that the `FactoMineR` library helps a lot in facilitating the clustering process once your dataset is in proper format. It takes you through a natural progression of  clustering application with a lot of flexibility available to the user to tune the analysis to his/hers needs. I especially like the `MFA` function where both `PCA` and `MCA` can be integrated into a concise function.
