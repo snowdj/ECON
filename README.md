@@ -1,1 +1,1 @@
-#Welcome one, welcome all to the circus of amazement which is Data Analytics
+# Welcome one, this is a template modified from beautiful jekyll and eight20. 
