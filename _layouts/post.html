@@ -15,7 +15,7 @@ layout: default
                     
                     <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
                     {% for tag in page.tags %}
-                    <a class="codinfox-tag-mark badge" href="/blog/tag/#{{ tag | slugify }}" >
+                    <a class="codinfox-tag-mark badge" href="{{ site.baseurl }}/blog/tag/#{{ tag | slugify }}" >
                     <span class="glyphicon glyphicon-tag" aria-hidden="true"> </span> &nbsp; {{ tag }}
                     </a>
                     {% endfor %}
