@@ -1,9 +1,9 @@
 ---
 layout:   page
-title:    Categories
+title:    Labs
 ---
 {% comment%}
-Here we generate all the categories.
+Here we generate all post for the labs.
 {% endcomment%}
 
 {% assign rawcats = "" %}
@@ -42,7 +42,10 @@ Here we generate all the categories.
 <a href="#no-category" class="codinfox-category-mark" style="color:#999;text-decoration: none;"> No Category </a> &nbsp;&nbsp;
 </p>
 
+
 {% for ct in cats %}
+
+
 <h2 id="{{ ct | slugify }}">{{ ct }}</h2>
 <ul class="codinfox-category-list">
   {% for post in site.posts %}
@@ -50,36 +53,23 @@ Here we generate all the categories.
   <li>
     <h3>
     <span>
-      <a href="{{ post.url | prepend: site.baseurl}}">{{ post.title }}</a>
+      <a href="{{ post.url  | prepend: site.baseurl}}">{{ post.title }}</a>
         <small>{{ post.date | date_to_string }}</small>
       </span>
       {% for tag in post.tags %}
-      <a class="codinfox-tag-mark" href="{{ site.baseurl }}/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+      <a class="codinfox-tag-mark" href="{{ site.baseurl }}/tag/#{{ tag | slugify }}">{{ tag }}</a>
       {% endfor %}
     </h3>
   </li>
   {% endif %}
+
   {% endfor %}
 </ul>
+
+
+
 {% endfor %}
 
-<h2 id="no-category">No Category</h2>
-<ul class="codinfox-category-list">
-  {% for post in site.posts %}
-  {% unless post.category %}
-  <li>
-    <h3>
-      <a href="{{ post.url | prepend: site.baseurl}}">
-        {{ post.title }}
-        <small>{{ post.date | date_to_string }}</small>
-      </a>
-      {% for tag in post.tags %}
-      <a class="codinfox-tag-mark" href="{{ site.baseurl }}/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
-      {% endfor %}
-    </h3>
-  </li>
-  {% endunless %}
-  {% endfor %}
-</ul>
+
 
 </div>
