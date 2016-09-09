@@ -25,7 +25,8 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 paginate: 5
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+# https://jekyllrb.com/docs/configuration/
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", "_rmd", "slides"]
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 disqus: "jonduan"
@@ -33,7 +34,3 @@ disqus: "jonduan"
 
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: ""
-
-
-# https://jekyllrb.com/docs/configuration/
-exclude: [slides]
