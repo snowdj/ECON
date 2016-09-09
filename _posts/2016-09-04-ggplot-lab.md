@@ -58,7 +58,7 @@ qplot(time,temp,
       theme_bw(base_size = 12, base_family = "")
 {% endhighlight %}
 
-![center](goodjekyll/figures/ggplot_blog/unnamed-chunk-4-1.png)
+![center](/goodjekyll/figures/ggplot_blog/unnamed-chunk-4-1.png)
 
 
 {% highlight r %}
@@ -68,7 +68,7 @@ ggplot(beaver2, aes(activ, fill=activ)) +
   theme_bw(base_size = 12, base_family = "")
 {% endhighlight %}
 
-![center](goodjekyll/figures/ggplot_blog/unnamed-chunk-5-1.png)
+![center](/goodjekyll/figures/ggplot_blog/unnamed-chunk-5-1.png)
 
 A feature of the package that does irritate me, is the grey backrgound that is set as the default. A much clearer and widely used format is the theme of a white background with black gridlines.
 
