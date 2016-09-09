@@ -33,3 +33,7 @@ disqus: "jonduan"
 
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: ""
+
+
+# https://jekyllrb.com/docs/configuration/
+exclude: [slides]
