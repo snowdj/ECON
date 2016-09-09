@@ -43,7 +43,7 @@ qplot(beaver2$time,beaver2$temp,
       shape=I(16))
 {% endhighlight %}
 
-![center](goodjekyll/figures/ggplot_blog/unnamed-chunk-3-1.png)
+![center](/figures/ggplot_blog/unnamed-chunk-3-1.png)
 
 The main lesson I learned from using `ggplot2` is the trick to create a template to work off of in the future. So think of creating containers for different shapes, colors, labels, headings and of course statistical visualization of the relationship of the data with the `geom_smooth` parameters. This template can then be easily copy and pasted to your other scripts without having to go re-engage with the vignette to find a specific feature.
 
