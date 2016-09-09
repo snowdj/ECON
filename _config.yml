@@ -17,7 +17,7 @@ comments :
     short_name : jonduan
 analytics :
   provider : google
-  google : 
+  google :
       tracking_id : # 'UA-70616211-1'
 
 # Build settings
@@ -27,3 +27,9 @@ permalink: pretty
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
+# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+disqus: "jonduan"
+
+
+# Fill in your Google Analytics ID to track your website using GA
+google_analytics: ""
