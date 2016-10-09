@@ -1,28 +1,23 @@
 ---
-title: "Data Scientist with a wine hobby (Part I)"
+title: "Data Scientist with a wine hobby"
 author: "Hanjo Odendaal"
 date: "August 9, 2016"
 output: html_document
 ---
 
-After high school I made my way from Johannesburg, situated in the northern part of South Africa, to the famous wine country known as Stellenbosch in the south. Here for the first time I got a ton of exposure to wine and the countless varietals that make up this "drink of the gods".
+After high school I made my way from Johannesburg, situated in the northern part of South Africa, to the famous wine country known as Stellenbosch. Here for the first time I got a ton of exposure to wine and the wonderful myriad of varietals that make up this "drink of the gods".
 
 The one trick in wine tasting and exploring vini- and viticulture is the fact that the best way to learn about it all is going out to the farm and drinking the wine for yourself. Over the years I have become familiar with all the farms in the region and it can sometimes be a real prize when discovering a cellar which you have not visited. 
 
-As one can see from the map, there are quite a few farms that are 'officially' listed, but believe me there are a few hidden ones which one will never know of without some research.
+The ease this process I have used `R` in order to compile a sort of wine farm repository for myself as a go to guide whenever I visit the region. I did this as an exercise to explore Hadley Wickham's amazing `rvest` library which makes online data collection an ease.
 
-```{r, out.width = "400px", echo=F, fig.align='center'}
-knitr::include_graphics("Wine_review_data/map_stellenbosch.jpg")
-```
-
-To ease this process I have used `R` in order to compile a sort of wine farm repository for myself as a go to guide whenever I visit the region. I did this as an exercise to explore Hadley Wickham's amazing `rvest` library which makes online data collection an ease.
-
-The idea was to compile *wine review data* of the Stellenbosch wine region from [winemag.com](http://www.winemag.com)'s online database and use it to gain an analytical insight into this beautiful wine region in the Cape. 
+The idea was to compile *wine review data* from the Stellenbosch wine region from [winemag.com](http://www.winemag.com)'s online database and use it to gain an analytical insight into this beautiful wine region in the Cape.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+setwd("C:/Users/Hanjo/Dropbox/Idees/blog ideas/Wine_Stellies")
 options(warn = -1)
-Wine_cellar <- readRDS("Wine_review_data/Wine_collection.RDS")
+Wine_cellar <- readRDS("Wine_collection.RDS")
 library(dplyr)
 library(rvest)
 ```
@@ -50,7 +45,7 @@ info_xtr <- function(x){
 }
 ```
 
-The `info_xtr()` function returns a data.frame that contains the review, date of the specific review and the alcohol content:
+The `info_xtr()` function returns a data.frame that looks as as follows:
 ```{r}
 info_xtr(wine_href[1])
 ```
@@ -110,6 +105,6 @@ Wine_all %>% select(-c(wine_href, review)) %>% str()
 
 As you can see from the information displayed, we now have a complete data-set of all reviews of the the wines in the Stellenbosch region. This information can now be used to analyse the traits of the wine region in a number of ways. I will explore this data in the next post and will see what interesting insights we can draw from it.
 
-I am familiar with collecting online data using the `RCurl` package and have been wanting to see how I can integrate the `rvest` package into some of the work I do. I must admit, I love exploring online data with this package as the `html_node` function makes the collection a breeze. I would definitely recommend `rvest` as the go-to library for any online scraping needs.
+I am used to collecting online data using the `RCurl` package and have been wanting to see how I can integrate the `rvest` package into some of the work we do. I must admit, I love exploring online data with this package as the `html_node` function makes the collection a breeze. I would definitely recommend `rvest` as the go-to library for any online scraping needs.
 
 
