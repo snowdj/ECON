@@ -29,6 +29,11 @@ t and F tests are used to test linear restrictions.
 All are based on asymptotic distribution. 
 
 
+ {% raw %}
+  $$a^2 + b^2 = c^2$$ --> note that all equations between these tags will not need escaping! 
+ {% endraw %}
+
+
 $$ \alpha^2 (g) $$
 
 
