@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-date: 2016-11-02T00:00:00.000Z
+date: {}
 header-img: img/high_242.jpg
 comments: true
 subtitle: hypothesis test
@@ -30,6 +30,15 @@ All are based on asymptotic distribution.
 
 
 $$ \alpha^2 (g) $$
+
+
+\\( sin(x^2) \\)
+
+
+\\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]
+
+
+$$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$
 
 
 
