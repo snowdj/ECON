@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-date: {}
+date: 2016-11-02T00:00:00.000Z
 header-img: img/high_242.jpg
 comments: true
 subtitle: hypothesis test
