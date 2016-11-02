@@ -29,7 +29,7 @@ t and F tests are used to test linear restrictions.
 All are based on asymptotic distribution. 
 
 
-$$\kai^2 (g)$$
+$$ \alpha^2 (g) $$
 
 
 
