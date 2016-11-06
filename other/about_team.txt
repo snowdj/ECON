@@ -1,5 +1,5 @@
 ---
-layout: page-0
+layout: post
 title: "About Team"
 description: "We are all apprentices in a craft where no one ever becomes a master"
 header-img: "img/home-bg2.jpg"
