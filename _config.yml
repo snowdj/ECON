@@ -26,7 +26,7 @@ highlighter: rouge
 permalink: pretty
 paginate: 5
 # https://jekyllrb.com/docs/configuration/
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", "_rmd", "slides", ".html0"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", "_rmd", "slides", "other"]
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 disqus: "jonduan"
