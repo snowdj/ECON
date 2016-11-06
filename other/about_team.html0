@@ -10,6 +10,7 @@ header-img: "img/home-bg2.jpg"
 <h2>someone</h2>
 <div class="ui-grid-a">
       <div class="ui-block-a">
+        <span><img src="/goodjekyll/img/Head_shots/some.jpg" alt="someone" style="width:275px;height:207px;"></span>
       </div>
       <div class="ui-block-b">
          <p>Here is an example.</p>
