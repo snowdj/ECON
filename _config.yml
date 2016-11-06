@@ -2,9 +2,9 @@
 title: Evergreen
 header-img: img/home-bg2.jpg
 email: #hanjo.odendaal@eighty20.co.za
-description: "Analytics Blog"
-baseurl: "/goodjekyll"
-url:  "http://snowdj.github.io/goodjekyll"
+description: "Another Note"
+baseurl: "/note"
+url:  "http://snowdj.github.io/note"
 twitter_username: #safactaday
 github_username:  #Eighty20
 facebook_username:  #Eighty20-291937880846403
@@ -14,7 +14,7 @@ gems:
 comments :
   provider : disqus
   disqus :
-    short_name : jonduan
+    short_name : snowdj
 analytics :
   provider : google
   google :
@@ -29,7 +29,7 @@ paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", "_rmd", "slides", "other"]
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "jonduan"
+disqus: "snowdj"
 
 
 # Fill in your Google Analytics ID to track your website using GA
