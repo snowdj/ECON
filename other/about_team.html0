@@ -7,10 +7,9 @@ header-img: "img/home-bg2.jpg"
 
 <h1>Contributors to the blog</h1>
 
-<h2>Jon</h2>
+<h2>someone</h2>
 <div class="ui-grid-a">
       <div class="ui-block-a">
-        <span><img src="/note/img/Head_shots/hanjo00.jpg" alt="Hanjo" style="width:275px;height:207px;"></span>
       </div>
       <div class="ui-block-b">
          <p>Here is an example.</p>
