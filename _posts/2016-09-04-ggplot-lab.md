@@ -11,6 +11,15 @@ category: labs
 tags: [R, ggplot2]
 ---
 
+
+
+
+We try to add $\alpha$ to writing.
+
+
+$$ \beta $$
+
+
 This short post will explore a funny dataset that forms part of R's `dataset` library. The dataset will loaded out of interest of its content as well as using it to enagage with Hadley Wickhams's [ggplot2](http://docs.ggplot2.org/current/#) package. The dataset that will be used to explore `ggplot2` contains two time series of temperatures of beavers. The data was first presented in Reynolds (1994).
 
 Reynolds (1994) describes a small part of a study of the long-term temperature dynamics of beaver Castor canadensis in north-central Wisconsin. Body temperature was measured by telemetry every 10 minutes for four females, but data from a one period of less than a day for each of two animals is used here.
