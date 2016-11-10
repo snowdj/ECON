@@ -1,0 +1,110 @@
+---
+title: "Data Scientist with a wine hobby"
+author: "Hanjo Odendaal"
+date: "August 9, 2016"
+output: html_document
+---
+
+After high school I made my way from Johannesburg, situated in the northern part of South Africa, to the famous wine country known as Stellenbosch. Here for the first time I got a ton of exposure to wine and the wonderful myriad of varietals that make up this "drink of the gods".
+
+The one trick in wine tasting and exploring vini- and viticulture is the fact that the best way to learn about it all is going out to the farm and drinking the wine for yourself. Over the years I have become familiar with all the farms in the region and it can sometimes be a real prize when discovering a cellar which you have not visited. 
+
+The ease this process I have used `R` in order to compile a sort of wine farm repository for myself as a go to guide whenever I visit the region. I did this as an exercise to explore Hadley Wickham's amazing `rvest` library which makes online data collection an ease.
+
+The idea was to compile *wine review data* from the Stellenbosch wine region from [winemag.com](http://www.winemag.com)'s online database and use it to gain an analytical insight into this beautiful wine region in the Cape.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("C:/Users/Hanjo/Dropbox/Idees/blog ideas/Wine_Stellies")
+options(warn = -1)
+Wine_cellar <- readRDS("Wine_collection.RDS")
+library(dplyr)
+library(rvest)
+```
+
+The first step in collecting the data was to deal with some housekeeping issues. First I assign the base URL to start the collecting from and collect the number of pages from the Stellenbosch search result as part of the `pagination` block in the html. Secondly I collect the information around the wine such as name, points and price. Lastly I use the information on this first page to create a function, `info_xtr()`, to extract information of each of the wines from their own specific page. Specifically I extract the written review of the wine, the date of review and also the alcohol content of the wine.
+```{r, eval = F}
+library(dplyr)
+library(rvest)
+```
+
+```{r housekeeping}
+site = read_html("http://www.winemag.com/?s=stellenbosch&drink_type=wine&page=1")
+nr_pages <- html_nodes(site,".pagination li a") %>%
+  html_text() %>% tail(.,1) %>% as.numeric
+
+wine_href <- html_nodes(site,".review-listing") %>% html_attr("href")
+
+info_xtr <- function(x){
+  page <- read_html(x)
+  review <- page %>% html_nodes("p.description") %>% 
+    html_text
+  review_info <- page %>% html_nodes(".info.small-9.columns span span") %>% 
+    html_text()
+  cbind(review, date = review_info[5], Alc = review_info[1])
+}
+```
+
+The `info_xtr()` function returns a data.frame that looks as as follows:
+```{r}
+info_xtr(wine_href[1])
+```
+
+The wine selection data from the page is collated in a nice `data.frame()` for ease of reading. With all the information I need, I start my scraper to run through the website and collect all the information surrounding the wines
+```{r, eval = F}
+# Start the scraper ==============
+Wine_cellar <- list()
+for(i in 1:nr_pages)
+{
+  
+  cat("Wine review, page: ", i,"\n")
+  
+  site = read_html(paste0("http://www.winemag.com/?s=stellenbosch&drink_type=wine&page=",i))
+  
+  wine <- html_nodes(site,".review-listing .title") %>%
+    html_text()
+  
+  # extract specific information from title
+  wine_farms <- gsub(" \\d.*$","",wine)
+  wine_year <- gsub("[^0-9]","",wine)
+  wine_name <- gsub("^.*\\d ","",wine) %>% gsub(" \\(Stellenbosch\\)","",.)
+  
+  # extract review points
+  points <- html_nodes(site,".info .rating") %>%
+    html_text() %>% gsub(" Points","",.)
+  
+  # extract review price
+  price <- html_nodes(site,"span.price") %>%
+    html_text()
+  
+  wine_href <- html_nodes(site,".review-listing") %>% html_attr("href")
+  
+  # here I go collect all the information from each of the wines seperately
+  reviews <- sapply(wine_href, function(x) info_xtr(x))
+  reviews <- t(reviews) 
+  row.names(reviews) <- NULL
+  colnames(reviews) <- c("review", "review_date", "Alc")
+  
+  # bind all the information into a nicely formatted data.frame()
+  Wine_cellar[[i]] <- data.frame(wine_farms, wine_year, wine_name, points, price, wine_href, reviews, stringsAsFactors = F)
+  
+  # as a rule I always save the already collected data, just in case the scraper stops unexpectedly
+  saveRDS(Wine_cellar,"Wine_collection.RDS")
+  
+  # I add in a sleep as not the flood the website that I am scraping with requests
+  Sys.sleep(runif(1,0,3))
+}
+
+```
+
+With my scraper having completed its task in retrieving all the necessary information from the website, I bind the information from the `Wine_cellar` list object. For brevity I truncate my sample by removing the *href* and *review* columns which takes up a lot of space
+```{r, results = "hold"}
+Wine_all <- bind_rows(Wine_cellar)
+Wine_all %>% select(-c(wine_href, review)) %>% str()
+```
+
+As you can see from the information displayed, we now have a complete data-set of all reviews of the the wines in the Stellenbosch region. This information can now be used to analyse the traits of the wine region in a number of ways. I will explore this data in the next post and will see what interesting insights we can draw from it.
+
+I am used to collecting online data using the `RCurl` package and have been wanting to see how I can integrate the `rvest` package into some of the work we do. I must admit, I love exploring online data with this package as the `html_node` function makes the collection a breeze. I would definitely recommend `rvest` as the go-to library for any online scraping needs.
+
+

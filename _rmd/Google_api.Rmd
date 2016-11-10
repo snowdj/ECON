@@ -1,0 +1,187 @@
+---
+title: "Data Scientist with a Wine hobby (Part II)"
+author: "Hanjo Odendaal"
+date: "October 8, 2016"
+output: html_document
+---
+```{r, include=FALSE}
+library(EightyR)
+load_pkg(c("readr", "dplyr", "rvest"))
+Wine_all <- bind_rows(read_rds("_blogData/Wine_collection.rds"))
+Farm_locations <- read_rds("_blogData/Place_locations.rds")
+```
+
+# Getting introduced to Google and their API
+Previously we constructed a `data frame` that consisted out of the following variables that we might want to perform analysis on:
+```{r, echo=FALSE}
+names(Wine_all)
+```
+
+Now, one of the variables in the datasets, will be used to extend the information in our feature set even further. I will use the farms' names to collect information on the farms' location, by using an `API` made available through [Google's Developer Console](https://console.developers.google.com/). The specifc `API` I am refering to here, is their __Google Place API__ and the documentation on the parameters of this call can be found [here](https://developers.google.com/places/web-service/search).
+I do recommend having a look as they have quite a few other unique location based `API`'s which might be of interest.
+
+To use their api server, one needs to register an account and then set up what is know as a project. If you already have a google identity through something like Gmail, then this setup is a breeze.
+
+Logging onto the website's developer page, the first step in setting up, is to have a look at the credentials tab. Here you can see I have set up a server which I with a unique key I will use to call there API service:
+
+#<a><img src="/figures/Wine_review_fig/api_dash.JPG" align="middle" height="480" width="480" ></a>
+
+One of the important steps in using google's `API`, is that you have to white list the ip's which will be calling the `API` service. For me you can see at the bottom of the picture, that I have worked on this project from 2 different locations. 
+
+#<a><img src="/figures/Wine_review_fig/api_dash2.JPG" align="middle" height="480" width="480" ></a>
+
+You will also see in the **insert the credential key** which we will be using as part of the `API` service. This key is important when you are doing the call to their server as a credential check. Be aware you only have a limited amount of calls per day as a free user.
+
+So, having set up the server, I am now ready to head into R to create the function that will retreive the GPS coordinates of the wine farms extracted and enrich our dataset's features. The library that I will be relying on the most here is the `RJSONIO`. The reason for this is that the query will return the information in a json format.
+```{r api function, echo=T}
+library(RJSONIO)
+
+geoPlace <- function(placeName, verbose=FALSE) {
+  if(verbose) cat(placeName, "\n")
+  doc <- URLencode(paste0("https://maps.googleapis.com/maps/api/place/textsearch/json?query=",placeName,"&key=YOURKEYHERE"))
+  
+  x <- fromJSON(doc, simplify = FALSE)
+  
+  if(x$status=="OK") {
+    lat <- x$results[[1]]$geometry$location$lat
+    lng <- x$results[[1]]$geometry$location$lng
+    formatted_address <- x$results[[1]]$formatted_address
+    return(data.frame(placeName, lat, lng, formatted_address, stringsAsFactors = F))
+  } else {
+    return(c(NA,NA,NA, NA))
+  }
+}
+
+```
+The function takes 2 parameters, the first being the vector of place names to look up. The second parameter is useful to see which place you are doing a coordinate lookup on. The default is set to `FALSE` as one generally knows the vector you are inputting.
+
+My function is now ready to use, so I create the vector of unique wine farm names as this will serve as our input. I first filter the wine database to just include reviews from 2013 onwards. This is just to make sure we don't work with too outdated information.
+```{r}
+Wine_filtered <- 
+  filter(Wine_all, as.Date(review_date, "%m/%d/%Y") >= as.Date("2013-01-01"))
+
+Farms <- 
+  Wine_filtered %>% 
+  distinct(wine_farms) %>% 
+  unlist
+```
+
+If our server setup was done correctly, the following code will now retreive the place name's coordinates
+```{r, eval=F}
+Farm_locations <- lapply(Farms, function(x) geoPlace(x)) %>%
+  bind_rows
+```
+
+```{r, echo=F}
+head(Farm_locations)
+```
+
+Now, lets add these coordinates to our `dataframe`. This can obviously be placed within the pipe in the previous step, but for illustrative purposes I seperate these 2 steps.
+```{r}
+Wine_filtered <- left_join(Wine_all, Farm_locations, by = c("wine_farms" = "placeName"))
+```
+
+# Using ggmap to visualise our data
+When chosing to go wine tasting, a person commonly confronted with a problem known as the traveling salesman problem. In our case, it is trying to figure out the shortest route that will result in the best wine tastings.
+
+My aim here is to plot the wine farm locations I have collected to try and see if there are clusters or pockets of wine farms where good rated wines are prevelent. So, with this idea in mind I need to create a dataset that contains the farms, their average wine ratings and the coordinates.
+```{r}
+markers <- 
+  Wine_filtered %>% group_by(wine_farms) %>%
+  summarise(avg_points = mean(as.numeric(points))) %>% 
+  left_join(., Wine_filtered %>% select(wine_farms, lng,lat), by = c("wine_farms")) %>%
+  distinct() %>% filter(complete.cases(.) == T) %>% 
+  data.frame
+  
+```
+
+Now that I have that ready, I go and get a map of stellenbosch using the very handy `ggmap` package.
+```{r}
+library(ggmap)
+library(ggthemes)
+library(grid)
+
+Stellies <- suppressMessages(as.numeric(geocode("Stellenbosch")))
+
+StelliesMap <- ggmap(get_googlemap(center=Stellies, 
+                                   scale=1, 
+                                   zoom = 11))
+```
+
+Next I start exploring the functions of ggmap and I add my markers to the map as a layer. I specify that the size of the points need to relate the the average wine rating at that farm. I also choose that my color should be a gradient following the same idea.
+
+```{r}
+options(warn = -1)
+StelliesMap +
+  geom_point(data = markers, aes(x =lng, 
+                                 y= lat, 
+                                 size = avg_points, 
+                                 colour = avg_points
+                                 ),alpha = 0.75) +
+  scale_colour_gradient(high = "#ad351a", low = "#253275")
+
+```
+
+Ok, so from this map we can see that the dots are sort of scattered all over the map with a potential "good wine" cluster in the bottom left corner out on the M12. To confirm this, I construct a heatmap over the points of the map. The heatmap is weighted for the wine region's average rating, not the amount of points within the area
+
+```{r}
+markersWeighted <- markers[rep(row.names(markers), markers$avg_points), ]
+StelliesMap +
+  stat_density2d(data=markersWeighted, aes(x=lng, y=lat, fill=..level.., alpha=..level..),
+                 geom="polygon", size=0.01, bins=5) + 
+  scale_alpha(range=c(0.5, 1), guide=FALSE) +
+  theme_map() + 
+  theme(plot.title=element_text(face="bold")) +
+  labs(x=NULL, y=NULL, title="Heatmaps of wine farms in Stellenbosch region\n")
+```
+
+If we look at the map now, a much clearer picture can be seen. There are indeed two avenues when going on a wine tour in Stellenbosch. You can either take the M12 out, or the R44.
+
+```{r, eval =F, include=F}
+Wine_yearly <- 
+  mutate(Wine_all, Year = as.Date(review_date, "%m/%d/%Y")) %>% 
+  mutate(Year = format(Year, "%Y")) %>% group_by(wine_farms, Year) %>%
+  summarise(avg_points = mean(as.numeric(points))) %>%
+  filter(Year > 2000) %>% left_join(., Farm_locations, by = c("wine_farms" = "placeName")) %>%
+  ungroup %>%
+  filter(complete.cases(.) == T) %>% 
+  data.frame
+
+wineWeighted <- Wine_yearly[rep(row.names(Wine_yearly), Wine_yearly$avg_points), ]
+
+years <- sort(unique(wineWeighted$Year))
+
+for(i in 1:length(years)){
+markersWeighted <- filter(wineWeighted, Year == years[i])
+StelliesMap +
+  stat_density2d(data=markersWeighted, aes(x=lng, y=lat, fill=..level.., alpha=..level..),
+                 geom="polygon", size=0.01, bins=5) + 
+  scale_alpha(range=c(0.5, 1), guide=FALSE) +
+  theme_map() + 
+  theme(plot.title=element_text(face="bold")) +
+  labs(x=NULL, y=NULL, title="Wine ratings through the years within Stellenbosch region\n") +
+  annotate(geom="text", x=19, y=-33.78, label=years[i], color="red", size = 5)
+
+ggsave(paste0("img/heatmap",sprintf("name_%03d", i),".png"))
+}
+```
+
+```{r, include = F, eval = F}
+     unlink("example_1.gif")
+     shell("convert -delay 100 img/*.png example_1.gif")
+     shell("convert example_1.gif -resize 25%  wines_yearly.gif")
+     unlink("img/*.png")
+```
+
+Finally, one of the things that I am most interested in is to see whether this particular wine region, in the bottom left corner, has always produced wine of top quality. It might just be that from 2013 upwards the region was lucky in terms of climat. The image belows shows a heatmap of the previous years from 2001 to 2015, tha captures the top rated wine farms each year.
+
+#<a><img src="/figures/Wine_review_fig/wines_yearly.gif" align="middle" height="480" width="480" ></a>
+
+It does seem that from around 2009, the region in the bottom left coner has been performing well.
+
+
+
+
+
+
+
