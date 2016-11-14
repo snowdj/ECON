@@ -7,19 +7,13 @@ tags: proposal
 ---
 ## RESEARCH METHODS
 
-The principal method of analysis will be to develop energy systems models to examine the
-allocation of power across renewable and non-renewable generating sources, and between jurisdictions
-along interties. Our focus is on Canada and our approach will be to construct a decision support model
-for two separate electricity grids, each representing a different mix of generating facilities. The grids are
-connected by a transmission intertie that allows them to trade electricity and meet the constraints
-imposed by different forms of generation. (Decision variables include the allocation of generation to the
-various generators in the system, plus the capacities of transmission lines.) One grid relies primarily on
-hydroelectricity, with remaining load met by natural gas and other power sources (including biomass).
-The other system meets base-load power needs with coal, CCGT and/or biomass assets, while marginal
-power is produced by a mix of hydro and open-cycle natural gas for peak power production. A
-renewable source such as wind is introduced at various levels. Case studies will consider British
-Columbia and Alberta, and Nova Scotia and Newfoundland and Labrador (NL); in both situations, one
-grid is fossil fuel driven while the ‘partner’ grid consists almost exclusively of hydro assets, while new
+The principal method of analysis will be to develop energy systems models to examine the allocation of power across renewable and non-renewable generating sources, and between jurisdictions along interties. Our focus is on Canada and our approach will be to construct a decision support model for two separate electricity grids, each representing a different mix of generating facilities.
+
+ - The grids are connected by a transmission intertie that allows them to trade electricity and meet the constraints imposed by different forms of generation. (Decision variables include the allocation of generation to the various generators in the system, plus the capacities of transmission lines.) 
+
+ - One grid relies primarily on hydroelectricity, with remaining load met by natural gas and other power sources (including biomass). 
+ - The other system meets base-load power needs with coal, CCGT and/or biomass assets, while marginal power is produced by a mix of hydro and open-cycle natural gas for peak power production. 
+ - A renewable source such as wind is introduced at various levels. Case studies will consider British Columbia and Alberta, and Nova Scotia and Newfoundland and Labrador (NL); in both situations, one grid is fossil fuel driven while the ‘partner’ grid consists almost exclusively of hydro assets, while new
 interties are either under construction (NS-NL) or contemplated (BC-AB).
 The energy systems models employ mathematical programming and simulation. A description of
 the type of models that will be used in the study is found in van Kooten (2012). The models to be
