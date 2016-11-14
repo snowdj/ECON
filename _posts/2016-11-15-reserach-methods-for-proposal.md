@@ -44,31 +44,15 @@ A mathematical programming (MP) model would then take historical choices into ac
 simulated) mixes of the decision variables to the historical mixes, allowing the optimization procedure to choose the weights, and constraining the sum of the historic and synthetic weights to equal 1. Notice that the ‘cost’ problem is not really solved, although the optimal allocation of load to generators is found. The most promising alternative approach that directly enables one to find the economic cost functions is based on positive mathematical programming (PMP), which was originally proposed by
 Howitt (1995) and is increasingly applied to resource management problems (Paris 2011; Heckelei et al., 2012). 
 
-PMP is especially suited for estimating cost functions for groups of generators, with the level of
-aggregation chosen dependent on the problem to be addressed and the overall complexity of the programming model. PMP takes into consideration not only the operating and maintenance costs of
-generating power from a particular source (e.g., an aggregation of several thermal power plants or
-generators), but also explicitly accounts for the costs associated with planned and unplanned shutdowns,
-other nuances specific to existing assets (e.g., varying ages of generators), et cetera. PMP has yet to be
-applied to the estimation of cost functions in the operation of electricity grids.
-The PMP approach usually requires specification of a strictly diagonal quadratic cost matrix,
-implying that there are no substitutionary or complementary effects among generating sources. Yet, the
-almost universal existence of multi-sourced electrical generating grids (viz., coal, natural gas, hydro,
-wind) implies that the regional power authorities are well aware of the interdependencies among
-generators, and use them together to maximize profits. Clearly, the assumption of a diagonal cost matrix
-may not be realistic. Fortunately, the PMP method has been extended by employing information theory
-and the principle of maximum entropy (ME) to obtain parameter estimates for the entire cost matrix
+PMP is especially suited for estimating cost functions for groups of generators, with the level of aggregation chosen dependent on the problem to be addressed and the overall complexity of the programming model. PMP takes into consideration not only the operating and maintenance costs of
+generating power from a particular source (e.g., an aggregation of several thermal power plants or generators), but also explicitly accounts for the costs associated with planned and unplanned shutdowns, other nuances specific to existing assets (e.g., varying ages of generators), et cetera. PMP has yet to be applied to the estimation of cost functions in the operation of electricity grids.
+
+The PMP approach usually requires specification of a strictly diagonal quadratic cost matrix, implying that there are no substitutionary or complementary effects among generating sources. Yet, the almost universal existence of multi-sourced electrical generating grids (viz., coal, natural gas, hydro, wind) implies that the regional power authorities are well aware of the interdependencies among generators, and use them together to maximize profits. Clearly, the assumption of a diagonal cost matrix may not be realistic. Fortunately, the PMP method has been extended by employing information theory and the principle of maximum entropy (ME) to obtain parameter estimates for the entire cost matrix
 (Howitt 1995, 2005; Paris & Howitt 1998; Buysee et al. 2007).
-Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the
-derived marginal costs will not converge to the true MCs. They introduce a generalized maximum
-entropy approach in which the shadow prices associated with the calibration constraints of PMP and the
-parameters of the cost function are estimated simultaneously using mathematical programming, something they refer to as econometric programming. In essence, the method employs a standard
-Lagrangian with econometric criteria applied directly to the Karush-Kuhn-Tucker conditions. This
-permits prior information to influence the estimation results even in situations with limited data, while
-ensuring computational stability.
-The ME approach can be used in conjunction with PMP methods to reconstruct electricity
-production functions; the contribution of ME is to reconstruct the parameters of the production function
-so as to duplicate the multiple-output generating mixes historically observed. By specifying a set of
-observed costs associated with power production (i.e., operating and maintenance costs, cost of planned
+Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the derived marginal costs will not converge to the true MCs. They introduce a generalized maximum entropy approach in which the shadow prices associated with the calibration constraints of PMP and the
+parameters of the cost function are estimated simultaneously using mathematical programming, something they refer to as econometric programming. In essence, the method employs a standard Lagrangian with econometric criteria applied directly to the Karush-Kuhn-Tucker conditions. This
+permits prior information to influence the estimation results even in situations with limited data, while ensuring computational stability.
+The ME approach can be used in conjunction with PMP methods to reconstruct electricity production functions; the contribution of ME is to reconstruct the parameters of the production function so as to duplicate the multiple-output generating mixes historically observed. By specifying a set of observed costs associated with power production (i.e., operating and maintenance costs, cost of planned
 and unplanned shutdowns and retrofits, etc.), the ME technique estimates a unique distribution from the
 prior cost information. It has been shown that the distribution with the maximum entropy is the best
 estimator. Again, maximum entropy has yet to be applied to electrical grid management settings, but it
