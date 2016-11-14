@@ -1,11 +1,13 @@
 ---
-published: false
+published: true
 layout: post
 title: Reserach Methods
 categories: proposal
 tags: proposal
 ---
 ## RESEARCH METHODS
+
+$$ \beta $$
 
 The principal method of analysis will be to develop energy systems models to examine the allocation of power across renewable and non-renewable generating sources, and between jurisdictions along interties. Our focus is on Canada and our approach will be to construct a decision support model for two separate electricity grids, each representing a different mix of generating facilities.
 
@@ -86,4 +88,3 @@ examine how the optimal structure of an electricity grid in a particular jurisdi
 Further, we can estimate potential costs of such policies. Finally, we can
 determine whether and under what circumstances the grids we examine can reduce CO2e emissions by upwards of 80% from 2005 levels by 2050, as has been agreed to in international negotiations. 
 Modeling energy systems such as electricity grids is fraught with complexities related to the engineering of physical assets, the economics of regulated (command-and-control) versus unregulated (privatized) decision making (e.g., BC vs. Alberta), calibration and solution techniques in mathematical programming, et cetera. After more than a decade grappling with these issues in a variety of contexts (including in the classroom), the PI needs a period of continuous funding to be able adequately to address the issues identified in this proposal.
-
