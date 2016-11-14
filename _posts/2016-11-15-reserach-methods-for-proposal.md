@@ -53,7 +53,9 @@ The PMP approach usually requires specification of a strictly diagonal quadratic
 
 #### ME
 
-Clearly, the assumption of a diagonal cost matrix may not be realistic. Fortunately, the PMP method has been extended by employing information theory and the principle of maximum entropy (ME) to obtain parameter estimates for the entire cost matrix (Howitt 1995, 2005; Paris & Howitt 1998; Buysee et al. 2007).
+Clearly, the assumption of a diagonal cost matrix may not be realistic. Fortunately, the PMP method has been extended by employing information theory and the principle of maximum entropy (**ME**) to obtain parameter estimates for the entire cost matrix (Howitt 1995, 2005; Paris & Howitt 1998; Buysee et al. 2007).
+
+
 
 Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the derived marginal costs will not converge to the true MCs. They introduce a generalized maximum entropy approach in which the shadow prices associated with the calibration constraints of PMP and the parameters of the cost function are estimated simultaneously using mathematical programming, something they refer to as econometric programming. 
 
