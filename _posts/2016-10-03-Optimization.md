@@ -70,7 +70,8 @@ The IP formulated below requires that we select five players, and that at least 
 
 
 
-$$\left.\begin{array}{rrcl} \min & 0 \\
+$$
+\left.\begin{array}{rrcl} \min & 0 \\
                     \text {s.t.:} & & & \\
                     & x_{1} + x_{2} + x_{3} + x_{4}+x_8+x_9 \geq 2 \text{ (2 Guards)}\\
                     & x_{3} + x_{4} + x_{5} + x_{6}+x_{7}+x_{8}+x_9 \ge 2 \text{ (2 Forwards)} \\
@@ -78,7 +79,8 @@ $$\left.\begin{array}{rrcl} \min & 0 \\
                     & \sum_{i=1}^{9}x_{i} = 5 \text{ (5 players)} \\
                     & x_{i} \in \{0,1\}  \quad \forall i\in\{1,\dots,9\} \text{ (Binary)} \\
                     
-                    \end{array}\right\}$$
+\end{array}\right\}
+$$
 
 
 
@@ -94,7 +96,7 @@ Historical note: The above false formulation for the basketball problem was (inc
 Which of the statements or constraints below is (by itself) equivalent to the statement "If x1=1, then x2=0"?
  
  
- x1 + x2 <=1
+$$ x1 + x2 <=1 $$
  
  
  
@@ -126,7 +128,7 @@ Assume also that x(i′,j′) is binary for all i′,j′ and y(i,j)∈{0,1,2} .
 Perhaps one could express it more succinctly in a manner similar to the way that the constraint in PART D is given. Ideally, one would only need to write a constraint for Block(i,j) and let i vary from 1 to 5 and let j vary from 1 to 5. One runs into a difficulty though. The constraint for Blocks (1, 1) includes just three of the x decision variables. It would be
 
 
-x(1,1)+x(1,2)+x(2,1)−2y(1,1)=1,
+$$ x(1,1)+x(1,2)+x(2,1)−2y(1,1)=1, $$
 
 
 where all four of these variables are binary. (Do you see why y(1,1) can be restricted to be binary?) Similarly for Blocks (1, 5), (5, 1) and (5, 5). Other Blocks in which i or j = 1 or 5 include 4 decision variables. It would seem difficult to be able to express all 25 constraints very succinctly. 
@@ -526,7 +528,8 @@ Excerpted from: Dimitris Bertsimas and John N. Tsitsiklis, Introduction to Linea
 [PART A](https://courses.edx.org/courses/course-v1:MITx+15.053x+3T2016/courseware/9c3a7c6efa5644e395524e12f3a9d15c/e80c44e2fabf4d2eb655eecc54ea0606/?child=first)
 
 
-$$\left.\begin{array}{rrcl} \max & z=51E + 102C + 66P_1 + 66P_2 +89B \\
+$$
+\left.\begin{array}{rrcl} \max & z=51E + 102C + 66P_1 + 66P_2 +89B \\
                 \text {s.t.:} & & & \\
                 & 10E+15C+10P_1+10P_2+20B \leq 130 \\.
 & E+2C+2P_1+P_2+B \leq 13  \\
@@ -534,13 +537,15 @@ $$\left.\begin{array}{rrcl} \max & z=51E + 102C + 66P_1 + 66P_2 +89B \\
 &  2E+4C+2P_1+5P_2+3B \leq 23\\
 &  P_1-P_2 = 0 \\
 &  E,C,P_1,P_2, B  \geq 0 \\                
-                \end{array}\right\}$$
+\end{array}\right\}
+$$
 
 ![](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/2f3e56ddfad8f65db4f04e5f928b7a5f/asset-v1:MITx+15.053x+3T2016+type@asset+block/p2b.tiff)
 
 
 
-$$\left.\begin{array}{rrcl}      &  \max & z=200X_{AR} + 300X_{BR} + 100X_{CR} + 292X_{BO} + 88X_{CO}\\
+$$
+\left.\begin{array}{rrcl}      &  \max & z=200X_{AR} + 300X_{BR} + 100X_{CR} + 292X_{BO} + 88X_{CO}\\
                     &  \text {s.t.:} & & & \\
        & \text{Regular Typesetting}     &  2X_{BR} +3X_{CR}   & \leq & 40 \\
         & \text{Overtime Typesetting}     &  2X_{BO} + 3X_{CO} & \leq &  35 \\
@@ -551,7 +556,8 @@ $$\left.\begin{array}{rrcl}      &  \max & z=200X_{AR} + 300X_{BR} + 100X_{CR} +
         & \text{Class B, minimum}     & X_{BR}+X_{BO}& \geq & 10 \\
         & \text{Class C, minimum}     & X_{CR}+X_{CO}&\geq & 5 \\
                 
-                \end{array}\right\}$$
+\end{array}\right\}
+$$
 
 
 
