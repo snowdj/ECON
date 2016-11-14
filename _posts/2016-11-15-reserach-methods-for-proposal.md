@@ -61,15 +61,12 @@ Again, maximum entropy has yet to be applied to electrical grid management setti
 
 ### Complexity and Energy Systems Modeling 
 A second set of challenges relates to the complex nature of the mathematical programming problem if hydroelectric sources of generation are included. Although hydro turbines have a rated capacity, their operating capacity depends crucially on head height – the volume of water in the relevant
-reservoir. Reservoir volume and capacity also impact the ability of hydro resources to store intermittent
-and other sources of power. Modeling these attributes is a challenge that leads to nonlinearities that may
-need to be addressed using linear approximation methods (see Muckstadt & Koenig 1977; Loucks et al.
-1981; Murillo-Sanchez & Thomas 1998; Arroyo & Conejo 2000).
-Further, anecdotal evidence from Alberta and Nova Scotia indicates that base-load generators do
-not adjust output very much during the day, with the exception of planned maintenance or unplanned
-outages. Base-load generators are nonetheless capable of responding quite rapidly (even ramping up
-their entire capacity within one hour) if they are in a ‘committed’ state. Ramping rates are slightly slower
-when the generator is ‘warm’, but it takes a significant time to ramp up from a cold start. Taking these
+reservoir. Reservoir volume and capacity also impact the ability of hydro resources to store intermittent and other sources of power. Modeling these attributes is a challenge that leads to nonlinearities that may
+need to be addressed using linear approximation methods (see Muckstadt & Koenig 1977; Loucks et al. 1981; Murillo-Sanchez & Thomas 1998; Arroyo & Conejo 2000).
+
+
+Further, anecdotal evidence from Alberta and Nova Scotia indicates that base-load generators do not adjust output very much during the day, with the exception of planned maintenance or unplanned outages. Base-load generators are nonetheless capable of responding quite rapidly (even ramping up
+their entire capacity within one hour) if they are in a ‘committed’ state. Ramping rates are slightly slower when the generator is ‘warm’, but it takes a significant time to ramp up from a cold start. Taking these
 states into account in mathematical programming poses challenges, although Arroyo & Conejo (2002)
 provide some guidance in how this might be addressed (although their example is somewhat contrived).
 Mathematical Programming and Policy Analysis
