@@ -77,22 +77,13 @@ states into account in mathematical programming poses challenges, although Arroy
 
 
 ### Mathematical Programming and Policy Analysis
-In addition to data collection, the research will consist of two principal activities – (i) providing
-theoretical foundations for the game-theoretic component and PMP method in the context of power
-optimization across the generators comprising the grid, and (ii) constructing mathematical programming
-models that can be solved numerically in the GAMS (McCarl et al. 2007) software environment. By
-solving a well-calibrated model numerically with real world data, we can be confident that the model
-can be used for policy analysis (Paris 2011). We will be able to track changes in the utilization of
-renewable power sources and CO2 emissions as electricity demand changes over time. We will be able to
-examine how the optimal structure of an electricity grid in a particular jurisdiction would change under
-various policies to mitigate climate change, highlighting opportunities for improving the performance of
-the current electricity system. Further, we can estimate potential costs of such policies. Finally, we can
-determine whether and under what circumstances the grids we examine can reduce CO2e emissions by
-upwards of 80% from 2005 levels by 2050, as has been agreed to in international negotiations.
-Modeling energy systems such as electricity grids is fraught with complexities related to the
-engineering of physical assets, the economics of regulated (command-and-control) versus unregulated
-(privatized) decision making (e.g., BC vs. Alberta), calibration and solution techniques in mathematical
-programming, et cetera. After more than a decade grappling with these issues in a variety of contexts
-(including in the classroom), the PI needs a period of continuous funding to be able adequately to
-address the issues identified in this proposal.
+In addition to data collection, the research will consist of two principal activities 
+– (i) providing theoretical foundations for the game-theoretic component and PMP method in the context of power optimization across the generators comprising the grid, and 
+- (ii) constructing mathematical programming models that can be solved numerically in the GAMS (McCarl et al. 2007) software environment. By
+solving a well-calibrated model numerically with real world data, we can be confident that the model can be used for policy analysis (Paris 2011). We will be able to track changes in the utilization of renewable power sources and CO2 emissions as electricity demand changes over time. We will be able to
+examine how the optimal structure of an electricity grid in a particular jurisdiction would change under various policies to mitigate climate change, highlighting opportunities for improving the performance of the current electricity system. 
+
+Further, we can estimate potential costs of such policies. Finally, we can
+determine whether and under what circumstances the grids we examine can reduce CO2e emissions by upwards of 80% from 2005 levels by 2050, as has been agreed to in international negotiations. 
+Modeling energy systems such as electricity grids is fraught with complexities related to the engineering of physical assets, the economics of regulated (command-and-control) versus unregulated (privatized) decision making (e.g., BC vs. Alberta), calibration and solution techniques in mathematical programming, et cetera. After more than a decade grappling with these issues in a variety of contexts (including in the classroom), the PI needs a period of continuous funding to be able adequately to address the issues identified in this proposal.
 
