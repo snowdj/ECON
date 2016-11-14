@@ -34,11 +34,9 @@ The complexity of the programming problem poses a number of challenges. The main
 proprietary. Further, even if costs are available for individual generators, models generally aggregate several or even all generators of a particular fuel type. In that case, engineering costs are no longer relevant for modeling purposes as costs need to take into account how the various generators operate in tandem and how external factors, including the operation of other generator types under changing load conditions, affect operating costs (Önal and McCarl 1989). 
 
 Models must then be calibrated to actual operating levels, and this requires the analyst to discover the economic cost functions. This has not been
-done previously in this context. Thus, a major contribution of the current research is to demonstrate how
-one or more calibration methods can be used to develop economic cost functions for grid optimization
-modeling.
-One early approach to calibration is referred to as the historic mixes approach (McCarl 1982;
-Önal and McCarl 1991). This method does not find the explicit economic cost function, but, rather,
+done previously in this context. Thus, a major contribution of the current research is to demonstrate how one or more calibration methods can be used to develop economic cost functions for grid optimization modeling.
+
+One early approach to calibration is referred to as the historic mixes approach (McCarl 1982; Önal and McCarl 1991). This method does not find the explicit economic cost function, but, rather,
 constrains future allocation of load across generators so it resembles the historic mix. It assumes that
 observed choices – allocations of load across generators – are optimal; that is, past choices are optimal
 or else they would not have been chosen. Further, because solutions occur at extreme points or corners
