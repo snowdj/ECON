@@ -51,8 +51,9 @@ The PMP approach usually requires specification of a strictly diagonal quadratic
 
 Clearly, the assumption of a diagonal cost matrix may not be realistic. Fortunately, the PMP method has been extended by employing information theory and the principle of maximum entropy (ME) to obtain parameter estimates for the entire cost matrix (Howitt 1995, 2005; Paris & Howitt 1998; Buysee et al. 2007).
 
-Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the derived marginal costs will not converge to the true MCs. They introduce a generalized maximum entropy approach in which the shadow prices associated with the calibration constraints of PMP and the
-parameters of the cost function are estimated simultaneously using mathematical programming, something they refer to as econometric programming. In essence, the method employs a standard Lagrangian with econometric criteria applied directly to the Karush-Kuhn-Tucker conditions. This
+Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the derived marginal costs will not converge to the true MCs. They introduce a generalized maximum entropy approach in which the shadow prices associated with the calibration constraints of PMP and the parameters of the cost function are estimated simultaneously using mathematical programming, something they refer to as econometric programming. 
+
+In essence, the method employs a standard Lagrangian with econometric criteria applied directly to the Karush-Kuhn-Tucker conditions. This
 permits prior information to influence the estimation results even in situations with limited data, while ensuring computational stability.
 The ME approach can be used in conjunction with PMP methods to reconstruct electricity production functions; the contribution of ME is to reconstruct the parameters of the production function so as to duplicate the multiple-output generating mixes historically observed. By specifying a set of observed costs associated with power production (i.e., operating and maintenance costs, cost of planned
 and unplanned shutdowns and retrofits, etc.), the ME technique estimates a unique distribution from the
