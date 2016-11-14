@@ -35,6 +35,7 @@ The successful integration of electricity from renewable sources depends on the 
 facilities. Researchers have investigated the problems associated with non-dispatchable wind and combined heat and power (CHP) (Liik et al. 2003; White 2004; Lund 2005). They found that grids are difficult to manage when output from large-scale wind farms reaches a maximum (often at night when
 CHP output also peaks) and load is minimal, while output from base-load facilities remains high. Unless electricity can be ‘dumped’ into another jurisdiction during these times, the adjustment costs imposed on extant generators might be large (AESO 2008). 
 
+### inefficiency
 Successful integration of wind energy depends on the generating mix of the extant system (Maddaloni et al. 2008b; Prescott & van Kooten 2009). High penetration rates of intermittent power sources has an impact on system CO2 emissions –reduced emissions from wind power do not replace emissions from thermal power plants one-for-one, for example. If a coal-fired power plant needs to lower output to accommodate wind, this leads to inefficiencies in fuel use resulting from operating below optimal capacity. 
 
 ### Storage
