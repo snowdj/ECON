@@ -36,25 +36,16 @@ proprietary. Further, even if costs are available for individual generators, mod
 Models must then be calibrated to actual operating levels, and this requires the analyst to discover the economic cost functions. This has not been
 done previously in this context. Thus, a major contribution of the current research is to demonstrate how one or more calibration methods can be used to develop economic cost functions for grid optimization modeling.
 
-One early approach to calibration is referred to as the historic mixes approach (McCarl 1982; Önal and McCarl 1991). This method does not find the explicit economic cost function, but, rather,
-constrains future allocation of load across generators so it resembles the historic mix. It assumes that
-observed choices – allocations of load across generators – are optimal; that is, past choices are optimal
-or else they would not have been chosen. Further, because solutions occur at extreme points or corners
-(viz., simplex algorithm for solving linear and quadratic programming problems), a linear combination
-of observed mixes is also optimal. A mathematical programming (MP) model would then take historical
-choices into account by constraining the current decision to be a weighted average of past decisions,
-with the weights determined endogenously within the MP model and the sum of the weights constrained
-to equal 1. Chen and Önal (2012) suggest an extension of this approach to include new sources of
-energy, which have not previously been observed to generate power. This method adds synthetic (or
-simulated) mixes of the decision variables to the historical mixes, allowing the optimization procedure to
-choose the weights, and constraining the sum of the historic and synthetic weights to equal 1. Notice that
-the ‘cost’ problem is not really solved, although the optimal allocation of load to generators is found.
-The most promising alternative approach that directly enables one to find the economic cost
-functions is based on positive mathematical programming (PMP), which was originally proposed by
-Howitt (1995) and is increasingly applied to resource management problems (Paris 2011; Heckelei et al.,
-2012). PMP is especially suited for estimating cost functions for groups of generators, with the level of
-aggregation chosen dependent on the problem to be addressed and the overall complexity of the
-programming model. PMP takes into consideration not only the operating and maintenance costs of
+One early approach to calibration is referred to as the historic mixes approach (McCarl 1982; Önal and McCarl 1991). This method does not find the explicit economic cost function, but, rather, constrains future allocation of load across generators so it resembles the historic mix. It assumes that
+observed choices – allocations of load across generators – are optimal; that is, past choices are optimal or else they would not have been chosen. Further, because solutions occur at extreme points or corners (viz., simplex algorithm for solving linear and quadratic programming problems), a linear combination
+of observed mixes is also optimal. 
+
+A mathematical programming (MP) model would then take historical choices into account by constraining the current decision to be a weighted average of past decisions, with the weights determined endogenously within the MP model and the sum of the weights constrained to equal 1. Chen and Önal (2012) suggest an extension of this approach to include new sources of energy, which have not previously been observed to generate power. This method adds synthetic (or
+simulated) mixes of the decision variables to the historical mixes, allowing the optimization procedure to choose the weights, and constraining the sum of the historic and synthetic weights to equal 1. Notice that the ‘cost’ problem is not really solved, although the optimal allocation of load to generators is found. The most promising alternative approach that directly enables one to find the economic cost functions is based on positive mathematical programming (PMP), which was originally proposed by
+Howitt (1995) and is increasingly applied to resource management problems (Paris 2011; Heckelei et al., 2012). 
+
+PMP is especially suited for estimating cost functions for groups of generators, with the level of
+aggregation chosen dependent on the problem to be addressed and the overall complexity of the programming model. PMP takes into consideration not only the operating and maintenance costs of
 generating power from a particular source (e.g., an aggregation of several thermal power plants or
 generators), but also explicitly accounts for the costs associated with planned and unplanned shutdowns,
 other nuances specific to existing assets (e.g., varying ages of generators), et cetera. PMP has yet to be
