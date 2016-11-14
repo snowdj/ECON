@@ -39,10 +39,10 @@ Successful integration of wind energy depends on the generating mix of the extan
 night, buying back hydroelectricity at peak times during the day – de facto storage. 
 
 ### The primary obstacle
-Lack of intertie transmission capacity is the primary obstacle to greater profiteering from such exchanges (Gross et al. 2003, 2007; DeCarolis & Keith 2006; but see Oswald et al. 2008). Even though a jurisdiction with plentiful hydro capacity could meet its power needs without purchasing outside power, it could become more profitable by trading power; by cooperating, the jurisdiction with storage capacity and its neighbor
-could simultaneously be made better off. There are clear benefits from more closely linking disparate
-operating systems. It remains an empirical question as to whether the benefits of such links exceed the
-costs of building the required transmission infrastructure (Gagnon et al. 2002).
+Lack of intertie transmission capacity is the primary obstacle to greater profiteering from such exchanges (Gross et al. 2003, 2007; DeCarolis & Keith 2006; but see Oswald et al. 2008). Even though a jurisdiction with plentiful hydro capacity could meet its power needs without purchasing outside power, it could become more profitable by trading power; by cooperating, the jurisdiction with storage capacity and its neighbor could simultaneously be made better off. There are clear benefits from more closely linking disparate
+operating systems. It remains an empirical question as to whether the benefits of such links exceed the costs of building the required transmission infrastructure (Gagnon et al. 2002).
+
+
 Finally, biomass energy has recently resurged in recent decades. Wood waste from sawmills and
 black liquor from pulp mills are now used on site for space heating or power generation, often
 accompanied by the sale of electricity to the grid. Roadside and other harvest wastes are promoted for generating electricity (Kumar 2009; Kumar et al. 2008). As a result of subsidies and mandates to reduce
