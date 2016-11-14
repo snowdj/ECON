@@ -40,6 +40,8 @@ One early approach to calibration is referred to as the historic mixes approach 
 observed choices – allocations of load across generators – are optimal; that is, past choices are optimal or else they would not have been chosen. Further, because solutions occur at extreme points or corners (viz., simplex algorithm for solving linear and quadratic programming problems), a linear combination
 of observed mixes is also optimal. 
 
+
+#### PMP
 A mathematical programming (MP) model would then take historical choices into account by constraining the current decision to be a weighted average of past decisions, with the weights determined endogenously within the MP model and the sum of the weights constrained to equal 1. Chen and Önal (2012) suggest an extension of this approach to include new sources of energy, which have not previously been observed to generate power. This method adds synthetic (or
 simulated) mixes of the decision variables to the historical mixes, allowing the optimization procedure to choose the weights, and constraining the sum of the historic and synthetic weights to equal 1. Notice that the ‘cost’ problem is not really solved, although the optimal allocation of load to generators is found. The most promising alternative approach that directly enables one to find the economic cost functions is based on positive mathematical programming (PMP), which was originally proposed by
 Howitt (1995) and is increasingly applied to resource management problems (Paris 2011; Heckelei et al., 2012). 
