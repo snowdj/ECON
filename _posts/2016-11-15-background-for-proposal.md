@@ -46,5 +46,4 @@ operating systems. It remains an empirical question as to whether the benefits o
 Finally, biomass energy has recently resurged in recent decades. Wood waste from sawmills and black liquor from pulp mills are now used on site for space heating or power generation, often accompanied by the sale of electricity to the grid. Roadside and other harvest wastes are promoted for generating electricity (Kumar 2009; Kumar et al. 2008). As a result of subsidies and mandates to reduce reliance on fossil fuels, wood pellet production capacity in western Canada has expanded to supply markets as far away as Europe as wood pellets can easily be co-fired with coal. 
 
 However, there are obstacles to the use of biomass: biomass energy is not entirely emissions neutral (van Kooten 2013, pp.338-347), greater demand for biomass energy increases supply costs and distorts land use (Niquidet
-et al. 2012), and increases prices of wood residuals harms the traditional wood manufacturing and
-pulping sectors (Stennes et al. 2010).
+et al. 2012), and increases prices of wood residuals harms the traditional wood manufacturing and pulping sectors (Stennes et al. 2010).
