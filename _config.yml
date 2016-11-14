@@ -21,8 +21,8 @@ analytics :
       tracking_id : # 'UA-70616211-1'
 
 # Build settings
-#markdown: kramdown
-markdown: redcarpet
+markdown: kramdown
+#markdown: redcarpet
 highlighter: rouge
 permalink: pretty
 paginate: 5
