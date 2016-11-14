@@ -57,7 +57,17 @@ head(beaver2)
 
 
 
+test using \```
 
+
+
+```r
+library(ggplot2,quietly = T)
+library(datasets,quietly = T)
+data(beavers)
+head(beaver2)
+
+```
 
 
 
