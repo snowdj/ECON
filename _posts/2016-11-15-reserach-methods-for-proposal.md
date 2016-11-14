@@ -13,14 +13,11 @@ The principal method of analysis will be to develop energy systems models to exa
 
  - One grid relies primarily on hydroelectricity, with remaining load met by natural gas and other power sources (including biomass). 
  - The other system meets base-load power needs with coal, CCGT and/or biomass assets, while marginal power is produced by a mix of hydro and open-cycle natural gas for peak power production. 
- - A renewable source such as wind is introduced at various levels. Case studies will consider British Columbia and Alberta, and Nova Scotia and Newfoundland and Labrador (NL); in both situations, one grid is fossil fuel driven while the ‘partner’ grid consists almost exclusively of hydro assets, while new
-interties are either under construction (NS-NL) or contemplated (BC-AB).
-The energy systems models employ mathematical programming and simulation. A description of
-the type of models that will be used in the study is found in van Kooten (2012). The models to be
-developed in the proposed research will expand extensively on this prototype modeling to include the
-integration of two grids in a more explicit fashion, a sub-model detailing the operation of hydroelectric
-facilities, the interaction between disparate grid operators, and the calibration procedures.
-Game Theory and Grid Expansion
+ - A renewable source such as wind is introduced at various levels. Case studies will consider British Columbia and Alberta, and Nova Scotia and Newfoundland and Labrador (NL); in both situations, one grid is fossil fuel driven while the ‘partner’ grid consists almost exclusively of hydro assets, while new interties are either under construction (NS-NL) or contemplated (BC-AB).
+ 
+The energy systems models employ mathematical programming and simulation. A description of the type of models that will be used in the study is found in van Kooten (2012). The models to be developed in the proposed research will expand extensively on this prototype modeling to include the integration of two grids in a more explicit fashion, a sub-model detailing the operation of hydroelectric facilities, the interaction between disparate grid operators, and the calibration procedures.
+
+### Game Theory and Grid Expansion
 The system operators will be modeled as strategic agents maximizing net revenues. Each
 operator takes into account the decisions of the other operator via the reaction functions of game theory
 (Bierman & Fernandez 1998). If the available data consist of hourly prices, the operators will maximize
