@@ -60,8 +60,7 @@ The ME approach can be used in conjunction with PMP methods to reconstruct elect
 Again, maximum entropy has yet to be applied to electrical grid management settings, but it appears to be well suited for solving problems associated with interdependent decisions. The proposed research will thus investigate how an electricity grid management model can be calibrated using historical mixes, PMP and maximum entropy methods. This is envisioned to be a long-term task.
 
 ### Complexity and Energy Systems Modeling 
-A second set of challenges relates to the complex nature of the mathematical programming problem if hydroelectric sources of generation are included. Although hydro turbines have a rated
-capacity, their operating capacity depends crucially on head height – the volume of water in the relevant
+A second set of challenges relates to the complex nature of the mathematical programming problem if hydroelectric sources of generation are included. Although hydro turbines have a rated capacity, their operating capacity depends crucially on head height – the volume of water in the relevant
 reservoir. Reservoir volume and capacity also impact the ability of hydro resources to store intermittent
 and other sources of power. Modeling these attributes is a challenge that leads to nonlinearities that may
 need to be addressed using linear approximation methods (see Muckstadt & Koenig 1977; Loucks et al.
