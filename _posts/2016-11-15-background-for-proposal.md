@@ -37,9 +37,8 @@ CHP output also peaks) and load is minimal, while output from base-load faciliti
 
 Successful integration of wind energy depends on the generating mix of the extant system (Maddaloni et al. 2008b; Prescott & van Kooten 2009). High penetration rates of intermittent power sources has an impact on system CO2 emissions –reduced emissions from wind power do not replace emissions from thermal power plants one-for-one, for example. If a coal-fired power plant needs to lower output to accommodate wind, this leads to inefficiencies in fuel use resulting from operating below optimal capacity. Storage of wind-generated electricity offers a way out, but storage also enables coal plants to operate more efficiently, thereby saving fuel and potentially reducing CO2 emissions. For example, Alberta sells coal-fired power to BC at
 night, buying back hydroelectricity at peak times during the day – de facto storage. 
-
-Lack of intertie transmission capacity is the primary obstacle to greater profiteering from such exchanges (Gross et al.
-2003, 2007; DeCarolis & Keith 2006; but see Oswald et al. 2008). Even though a jurisdiction with
+### The primary obstacle
+Lack of intertie transmission capacity is the primary obstacle to greater profiteering from such exchanges (Gross et al. 2003, 2007; DeCarolis & Keith 2006; but see Oswald et al. 2008). Even though a jurisdiction with
 plentiful hydro capacity could meet its power needs without purchasing outside power, it could become
 more profitable by trading power; by cooperating, the jurisdiction with storage capacity and its neighbor
 could simultaneously be made better off. There are clear benefits from more closely linking disparate
