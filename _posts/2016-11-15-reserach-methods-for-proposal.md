@@ -24,20 +24,16 @@ A challenge to energy systems modeling in this context concerns the use of game 
 issue has not previously been considered in the modeling of large-scale transmission interties across multiple grids and jurisdictions (e.g., see DeCarolis & Keith 2006). Addressing this issue and determining how cooperative versus non-cooperative solutions affect the economic wellbeing and CO2
 flux from electricity production and storage is one of the long-term objectives of the research.
 
-### Optimization
+### Optimization 
 Optimization is subject to technical constraints that are specific to each electricity grid. Accurate specification of the constraints is important for measuring the true impact of renewable energy on the generation assets, the overall grid and CO2 emissions. Thus, data collection will be a major component
 of the project. We will employ an optimization approach (Ravindran et al. 2006) that builds upon methods used previously (Prescott et al. 2007; Benitez et al. 2008; Maddaloni et al. 2008a, 2008b; Prescott & van Kooten 2009; Timilsina et al 2013; Sopinka et al. 2013).
 
 ### Calibration of Mathematical Programming Models in the Energy Systems Context
 
-The complexity of the programming problem poses a number of challenges. The main one relates to the costs of operating power plants at various levels of capacity. Information on costs is difficult to
-find; cost data and (quite sophisticated) decision models used by system operators and asset owners are
-proprietary. Further, even if costs are available for individual generators, models generally aggregate
-several or even all generators of a particular fuel type. In that case, engineering costs are no longer
-relevant for modeling purposes as costs need to take into account how the various generators operate in
-tandem and how external factors, including the operation of other generator types under changing load
-conditions, affect operating costs (Önal and McCarl 1989). Models must then be calibrated to actual
-operating levels, and this requires the analyst to discover the economic cost functions. This has not been
+The complexity of the programming problem poses a number of challenges. The main one relates to the costs of operating power plants at various levels of capacity. Information on costs is difficult to find; cost data and (quite sophisticated) decision models used by system operators and asset owners are
+proprietary. Further, even if costs are available for individual generators, models generally aggregate several or even all generators of a particular fuel type. In that case, engineering costs are no longer relevant for modeling purposes as costs need to take into account how the various generators operate in tandem and how external factors, including the operation of other generator types under changing load conditions, affect operating costs (Önal and McCarl 1989). 
+
+Models must then be calibrated to actual operating levels, and this requires the analyst to discover the economic cost functions. This has not been
 done previously in this context. Thus, a major contribution of the current research is to demonstrate how
 one or more calibration methods can be used to develop economic cost functions for grid optimization
 modeling.
