@@ -73,9 +73,10 @@ need to be addressed using linear approximation methods (see Muckstadt & Koenig 
 
 Further, anecdotal evidence from Alberta and Nova Scotia indicates that base-load generators do not adjust output very much during the day, with the exception of planned maintenance or unplanned outages. Base-load generators are nonetheless capable of responding quite rapidly (even ramping up
 their entire capacity within one hour) if they are in a ‘committed’ state. Ramping rates are slightly slower when the generator is ‘warm’, but it takes a significant time to ramp up from a cold start. Taking these
-states into account in mathematical programming poses challenges, although Arroyo & Conejo (2002)
-provide some guidance in how this might be addressed (although their example is somewhat contrived).
-Mathematical Programming and Policy Analysis
+states into account in mathematical programming poses challenges, although Arroyo & Conejo (2002) provide some guidance in how this might be addressed (although their example is somewhat contrived) .
+
+
+### Mathematical Programming and Policy Analysis
 In addition to data collection, the research will consist of two principal activities – (i) providing
 theoretical foundations for the game-theoretic component and PMP method in the context of power
 optimization across the generators comprising the grid, and (ii) constructing mathematical programming
