@@ -46,3 +46,54 @@ generation assets, the overall grid and CO2 emissions. Thus, data collection wil
 of the project. We will employ an optimization approach (Ravindran et al. 2006) that builds upon
 methods used previously (Prescott et al. 2007; Benitez et al. 2008; Maddaloni et al. 2008a, 2008b;
 Prescott & van Kooten 2009; Timilsina et al 2013; Sopinka et al. 2013).
+
+Calibration of Mathematical Programming Models in the Energy Systems Context
+The complexity of the programming problem poses a number of challenges. The main one relates
+to the costs of operating power plants at various levels of capacity. Information on costs is difficult to
+find; cost data and (quite sophisticated) decision models used by system operators and asset owners are
+proprietary. Further, even if costs are available for individual generators, models generally aggregate
+several or even all generators of a particular fuel type. In that case, engineering costs are no longer
+relevant for modeling purposes as costs need to take into account how the various generators operate in
+tandem and how external factors, including the operation of other generator types under changing load
+conditions, affect operating costs (Önal and McCarl 1989). Models must then be calibrated to actual
+operating levels, and this requires the analyst to discover the economic cost functions. This has not been
+done previously in this context. Thus, a major contribution of the current research is to demonstrate how
+one or more calibration methods can be used to develop economic cost functions for grid optimization
+modeling.
+One early approach to calibration is referred to as the historic mixes approach (McCarl 1982;
+Önal and McCarl 1991). This method does not find the explicit economic cost function, but, rather,
+constrains future allocation of load across generators so it resembles the historic mix. It assumes that
+observed choices – allocations of load across generators – are optimal; that is, past choices are optimal
+or else they would not have been chosen. Further, because solutions occur at extreme points or corners
+(viz., simplex algorithm for solving linear and quadratic programming problems), a linear combination
+of observed mixes is also optimal. A mathematical programming (MP) model would then take historical
+choices into account by constraining the current decision to be a weighted average of past decisions,
+with the weights determined endogenously within the MP model and the sum of the weights constrained
+to equal 1. Chen and Önal (2012) suggest an extension of this approach to include new sources of
+energy, which have not previously been observed to generate power. This method adds synthetic (or
+simulated) mixes of the decision variables to the historical mixes, allowing the optimization procedure to
+choose the weights, and constraining the sum of the historic and synthetic weights to equal 1. Notice that
+the ‘cost’ problem is not really solved, although the optimal allocation of load to generators is found.
+The most promising alternative approach that directly enables one to find the economic cost
+functions is based on positive mathematical programming (PMP), which was originally proposed by
+Howitt (1995) and is increasingly applied to resource management problems (Paris 2011; Heckelei et al.,
+2012). PMP is especially suited for estimating cost functions for groups of generators, with the level of
+aggregation chosen dependent on the problem to be addressed and the overall complexity of the
+programming model. PMP takes into consideration not only the operating and maintenance costs of
+generating power from a particular source (e.g., an aggregation of several thermal power plants or
+generators), but also explicitly accounts for the costs associated with planned and unplanned shutdowns,
+other nuances specific to existing assets (e.g., varying ages of generators), et cetera. PMP has yet to be
+applied to the estimation of cost functions in the operation of electricity grids.
+The PMP approach usually requires specification of a strictly diagonal quadratic cost matrix,
+implying that there are no substitutionary or complementary effects among generating sources. Yet, the
+almost universal existence of multi-sourced electrical generating grids (viz., coal, natural gas, hydro,
+wind) implies that the regional power authorities are well aware of the interdependencies among
+generators, and use them together to maximize profits. Clearly, the assumption of a diagonal cost matrix
+may not be realistic. Fortunately, the PMP method has been extended by employing information theory
+and the principle of maximum entropy (ME) to obtain parameter estimates for the entire cost matrix
+(Howitt 1995, 2005; Paris & Howitt 1998; Buysee et al. 2007).
+Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the
+derived marginal costs will not converge to the true MCs. They introduce a generalized maximum
+entropy approach in which the shadow prices associated with the calibration constraints of PMP and the
+parameters of the cost function are estimated simultaneously using mathematical programming,
+
