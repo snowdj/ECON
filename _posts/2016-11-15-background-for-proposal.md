@@ -21,8 +21,7 @@ Natural gas and nuclear energy are important alternatives to coal; natural gas h
 
 The electrical load that the system operator must satisfy varies a great deal throughout the day – from low demand at night to peak demand during the late afternoon and evening – and throughout the year. 
 
-Power demand at night is some 50% to 80% below daytime peak demand (based on data for the Texas, Ontario and Alberta grids). In most jurisdictions, base-load demands are met by combined-cycle gas turbines (CCGT), coal or nuclear power. Because it is difficult and costly to adjust output from baseload plants, it is necessary at peak demand times to have generation sources (e.g., open-cycle gas plants,
-hydroelectricity) that can adjust output very quickly. Alternatively, power can be purchased from other
+Power demand at night is some 50% to 80% below daytime peak demand (based on data for the Texas, Ontario and Alberta grids). In most jurisdictions, base-load demands are met by combined-cycle gas turbines (CCGT), coal or nuclear power. Because it is difficult and costly to adjust output from baseload plants, it is necessary at peak demand times to have generation sources (e.g., open-cycle gas plants, hydroelectricity) that can adjust output very quickly. Alternatively, power can be purchased from other
 jurisdictions via high-voltage transmission interties.
 The supply structure has implications for the integration of renewable power from intermittent
 sources such as wind (Hirst & Hild 2004; Lund 2005; Kennedy 2005; van Kooten 2010). The wind often
