@@ -26,21 +26,14 @@ The electrical load that the system operator must satisfy varies a great deal th
 Power demand at night is some 50% to 80% below daytime peak demand (based on data for the Texas, Ontario and Alberta grids). In most jurisdictions, base-load demands are met by combined-cycle gas turbines (CCGT), coal or nuclear power. Because it is difficult and costly to adjust output from baseload plants, it is necessary at peak demand times to have generation sources (e.g., open-cycle gas plants, hydroelectricity) that can adjust output very quickly. Alternatively, power can be purchased from other jurisdictions via high-voltage transmission interties.
 
 ### Unstable supply structure
-The supply structure has implications for the integration of renewable power from intermittent sources such as wind (Hirst & Hild 2004; Lund 2005; Kennedy 2005; van Kooten 2010). The wind often blows at night when the demand is met entirely by the base-load plants. At that point in the demand
-cycle, price is often below the marginal cost of production and the system operator must take some
-generating facilities off-line. Due to ramping considerations and the high costs of operating at less than
-optimal capacity, the output of base-load power plants is generally reduced very little and plants are
-rarely taken off line (Nordel’s Grid Group 2000; Lund 2005; Scorah et al. 2012). Rather, hydro and/or
-wind output is reduced, because it is simple and cheap to do so. This problem can be mitigated, for
+The supply structure has implications for the integration of renewable power from intermittent sources such as wind (Hirst & Hild 2004; Lund 2005; Kennedy 2005; van Kooten 2010). The wind often blows at night when the demand is met entirely by the base-load plants. At that point in the demand cycle, price is often below the marginal cost of production and the system operator must take some generating facilities off-line. 
+
+Due to ramping considerations and the high costs of operating at less than optimal capacity, the output of base-load power plants is generally reduced very little and plants are rarely taken off line (Nordel’s Grid Group 2000; Lund 2005; Scorah et al. 2012). Rather, hydro and/or wind output is reduced, because it is simple and cheap to do so. This problem can be mitigated, for
 example, if intermittent electricity can be stored in a reservoir (Benitez et al. 2008; Scorah et al. 2012).
-The successful integration of electricity from renewable sources depends on the legislation under
-which a system operator functions. If the operator is able to dispatch intermittent wind, costs will be
-much lower than if wind is non-dispatchable – accepted regardless of the impact on other generating
-facilities. Researchers have investigated the problems associated with non-dispatchable wind and
-combined heat and power (CHP) (Liik et al. 2003; White 2004; Lund 2005). They found that grids are
-difficult to manage when output from large-scale wind farms reaches a maximum (often at night when
-CHP output also peaks) and load is minimal, while output from base-load facilities remains high. Unless
-electricity can be ‘dumped’ into another jurisdiction during these times, the adjustment costs imposed on
+
+The successful integration of electricity from renewable sources depends on the legislation under which a system operator functions. If the operator is able to dispatch intermittent wind, costs will be much lower than if wind is non-dispatchable – accepted regardless of the impact on other generating
+facilities. Researchers have investigated the problems associated with non-dispatchable wind and combined heat and power (CHP) (Liik et al. 2003; White 2004; Lund 2005). They found that grids are difficult to manage when output from large-scale wind farms reaches a maximum (often at night when
+CHP output also peaks) and load is minimal, while output from base-load facilities remains high. Unless electricity can be ‘dumped’ into another jurisdiction during these times, the adjustment costs imposed on
 extant generators might be large (AESO 2008). Successful integration of wind energy depends on the
 generating mix of the extant system (Maddaloni et al. 2008b; Prescott & van Kooten 2009).
 High penetration rates of intermittent power sources has an impact on system CO2 emissions –
