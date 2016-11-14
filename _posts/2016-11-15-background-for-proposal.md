@@ -42,7 +42,7 @@ night, buying back hydroelectricity at peak times during the day – de facto st
 Lack of intertie transmission capacity is the primary obstacle to greater profiteering from such exchanges (Gross et al. 2003, 2007; DeCarolis & Keith 2006; but see Oswald et al. 2008). Even though a jurisdiction with plentiful hydro capacity could meet its power needs without purchasing outside power, it could become more profitable by trading power; by cooperating, the jurisdiction with storage capacity and its neighbor could simultaneously be made better off. There are clear benefits from more closely linking disparate
 operating systems. It remains an empirical question as to whether the benefits of such links exceed the costs of building the required transmission infrastructure (Gagnon et al. 2002).
 
-
+### The biomass energy
 Finally, biomass energy has recently resurged in recent decades. Wood waste from sawmills and black liquor from pulp mills are now used on site for space heating or power generation, often accompanied by the sale of electricity to the grid. Roadside and other harvest wastes are promoted for generating electricity (Kumar 2009; Kumar et al. 2008). As a result of subsidies and mandates to reduce reliance on fossil fuels, wood pellet production capacity in western Canada has expanded to supply markets as far away as Europe as wood pellets can easily be co-fired with coal. 
 
 However, there are obstacles to the use of biomass: biomass energy is not entirely emissions neutral (van Kooten 2013, pp.338-347), greater demand for biomass energy increases supply costs and distorts land use (Niquidet
