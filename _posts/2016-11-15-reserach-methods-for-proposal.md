@@ -95,5 +95,52 @@ and the principle of maximum entropy (ME) to obtain parameter estimates for the 
 Heckelei and Wolff (2003) argue, however, that in some cases PMP is inconsistent, because the
 derived marginal costs will not converge to the true MCs. They introduce a generalized maximum
 entropy approach in which the shadow prices associated with the calibration constraints of PMP and the
-parameters of the cost function are estimated simultaneously using mathematical programming,
+parameters of the cost function are estimated simultaneously using mathematical programming, something they refer to as econometric programming. In essence, the method employs a standard
+Lagrangian with econometric criteria applied directly to the Karush-Kuhn-Tucker conditions. This
+permits prior information to influence the estimation results even in situations with limited data, while
+ensuring computational stability.
+The ME approach can be used in conjunction with PMP methods to reconstruct electricity
+production functions; the contribution of ME is to reconstruct the parameters of the production function
+so as to duplicate the multiple-output generating mixes historically observed. By specifying a set of
+observed costs associated with power production (i.e., operating and maintenance costs, cost of planned
+and unplanned shutdowns and retrofits, etc.), the ME technique estimates a unique distribution from the
+prior cost information. It has been shown that the distribution with the maximum entropy is the best
+estimator. Again, maximum entropy has yet to be applied to electrical grid management settings, but it
+appears to be well suited for solving problems associated with interdependent decisions. The proposed
+research will thus investigate how an electricity grid management model can be calibrated using
+historical mixes, PMP and maximum entropy methods. This is envisioned to be a long-term task.
+Complexity and Energy Systems Modeling
+A second set of challenges relates to the complex nature of the mathematical programming
+problem if hydroelectric sources of generation are included. Although hydro turbines have a rated
+capacity, their operating capacity depends crucially on head height – the volume of water in the relevant
+reservoir. Reservoir volume and capacity also impact the ability of hydro resources to store intermittent
+and other sources of power. Modeling these attributes is a challenge that leads to nonlinearities that may
+need to be addressed using linear approximation methods (see Muckstadt & Koenig 1977; Loucks et al.
+1981; Murillo-Sanchez & Thomas 1998; Arroyo & Conejo 2000).
+Further, anecdotal evidence from Alberta and Nova Scotia indicates that base-load generators do
+not adjust output very much during the day, with the exception of planned maintenance or unplanned
+outages. Base-load generators are nonetheless capable of responding quite rapidly (even ramping up
+their entire capacity within one hour) if they are in a ‘committed’ state. Ramping rates are slightly slower
+when the generator is ‘warm’, but it takes a significant time to ramp up from a cold start. Taking these
+states into account in mathematical programming poses challenges, although Arroyo & Conejo (2002)
+provide some guidance in how this might be addressed (although their example is somewhat contrived).
+Mathematical Programming and Policy Analysis
+In addition to data collection, the research will consist of two principal activities – (i) providing
+theoretical foundations for the game-theoretic component and PMP method in the context of power
+optimization across the generators comprising the grid, and (ii) constructing mathematical programming
+models that can be solved numerically in the GAMS (McCarl et al. 2007) software environment. By
+solving a well-calibrated model numerically with real world data, we can be confident that the model
+can be used for policy analysis (Paris 2011). We will be able to track changes in the utilization of
+renewable power sources and CO2 emissions as electricity demand changes over time. We will be able to
+examine how the optimal structure of an electricity grid in a particular jurisdiction would change under
+various policies to mitigate climate change, highlighting opportunities for improving the performance of
+the current electricity system. Further, we can estimate potential costs of such policies. Finally, we can
+determine whether and under what circumstances the grids we examine can reduce CO2e emissions by
+upwards of 80% from 2005 levels by 2050, as has been agreed to in international negotiations.
+Modeling energy systems such as electricity grids is fraught with complexities related to the
+engineering of physical assets, the economics of regulated (command-and-control) versus unregulated
+(privatized) decision making (e.g., BC vs. Alberta), calibration and solution techniques in mathematical
+programming, et cetera. After more than a decade grappling with these issues in a variety of contexts
+(including in the classroom), the PI needs a period of continuous funding to be able adequately to
+address the issues identified in this proposal.
 
