@@ -1,14 +1,17 @@
 ---
 layout: post
-date: 2016-09-04 16:54:23
-header-img: "img/high_242.jpg"
+date: 2016-09-04T16:54:23.000Z
+header-img: img/high_242.jpg
 comments: true
-subtitle: "An exploration of ggplot2"
-title: "Body Temperature Series of Two Beavers"
-author: "Hanjo Odendaal"
+subtitle: An exploration of ggplot2
+title: Body Temperature Series of Two Beavers
+author: Hanjo Odendaal
 output: html_document
 category: labs
-tags: [R, ggplot2]
+tags:
+  - R
+  - ggplot2
+published: true
 ---
 
 
@@ -33,6 +36,9 @@ data(beavers)
 head(beaver2)
 {% endhighlight %}
 
+
+
+
 {% highlight text %}
 ##   day time  temp activ
 ## 1 307  930 36.58     0
@@ -52,7 +58,7 @@ qplot(beaver2$time,beaver2$temp,
       shape=I(16))
 {% endhighlight %}
 
-![center](/goodjekyll/figures/ggplot_blog/unnamed-chunk-3-1.png)
+![center](/note/figures/ggplot_blog/unnamed-chunk-3-1.png)
 
 The main lesson I learned from using `ggplot2` is the trick to create a template to work off of in the future. So think of creating containers for different shapes, colors, labels, headings and of course statistical visualization of the relationship of the data with the `geom_smooth` parameters. This template can then be easily copy and pasted to your other scripts without having to go re-engage with the vignette to find a specific feature.
 
@@ -67,7 +73,7 @@ qplot(time,temp,
       theme_bw(base_size = 12, base_family = "")
 {% endhighlight %}
 
-![center](/goodjekyll/figures/ggplot_blog/unnamed-chunk-4-1.png)
+![center](/note/figures/ggplot_blog/unnamed-chunk-4-1.png)
 
 
 {% highlight r %}
@@ -77,7 +83,7 @@ ggplot(beaver2, aes(activ, fill=activ)) +
   theme_bw(base_size = 12, base_family = "")
 {% endhighlight %}
 
-![center](/goodjekyll/figures/ggplot_blog/unnamed-chunk-5-1.png)
+![center](/note/figures/ggplot_blog/unnamed-chunk-5-1.png)
 
 A feature of the package that does irritate me, is the grey backrgound that is set as the default. A much clearer and widely used format is the theme of a white background with black gridlines.
 
@@ -87,7 +93,7 @@ qplot(data=beaver2,x=activ,y=temp,geom="boxplot", colour=activ)+
    labs(title = "Boxplot of Temperatures",x = "Beaver State",y="Temperature",colour="State")
 {% endhighlight %}
 
-![center](/goodjekyll/figures/ggplot_blog/unnamed-chunk-6-1.png)
+![center](/note/figures/ggplot_blog/unnamed-chunk-6-1.png)
 
 This concludes our short discussion on the use of the [ggplot2](http://docs.ggplot2.org/current/#) package. I do find having learned to plot with base feature in R, the notational difference is difficult to integrate when I am coding and it doesn't come naturally as of yet. The package is however flawlessy built with great flexibility in its features. I especially enjoy how it integrates with the [Caret](http://topepo.github.io/caret/index.html) machine learning package.
 
