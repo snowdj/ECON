@@ -2,10 +2,18 @@
 layout: post
 title: Interactive Linear Transformations
 tags:
-- math 
-- linear-algebra
+  - math
+  - linear-algebra
 mathjax: true
+published: true
 ---
+
+A $2 \times 2$ matrix, $A$, is a mapping, $A: \mathbb{R}^2 \mapsto \mathbb{R}^2$. To view the input and output of this function simultaneously, we'd need a 4D plot which is of course not possible. On the other hand, we can view both input and output vectors in the same plane.
+
+Above, the input is blue while the output is red. Move the input vector around with your mouse to see where different points get mapped according the given matrix. Change the matrix values to see how different matrices operate. For example, try a singular matrix or rotation matrix. Also, try to visually determine the eigenvectors of a given matrix.
+
+<!-- more -->
+
 
 <div id="linear-transformation">
     <table style="width: 100%;"><tr>
@@ -67,6 +75,8 @@ mathjax: true
 
 <br>
 <br>
+
+
 
 A $2 \times 2$ matrix, $A$, is a mapping, $A: \mathbb{R}^2 \mapsto \mathbb{R}^2$. To view the input and output of this function simultaneously, we'd need a 4D plot which is of course not possible. On the other hand, we can view both input and output vectors in the same plane.
 
@@ -219,3 +229,6 @@ Above, the input is blue while the output is red. Move the input vector around w
         drawVectors();
     });
 </script>
+
+
+
