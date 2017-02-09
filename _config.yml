@@ -14,7 +14,7 @@ gems:
 comments :
   provider : disqus
   disqus :
-    short_name : jonduan
+    short_name : snowdj
 analytics :
   provider : #google
   google :
@@ -30,7 +30,7 @@ paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md", "_rmd", "slides", "other"]
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: "snowdj"
+disqus: "snowdj"
 
 enable_mathjax: True
 # Fill in your Google Analytics ID to track your website using GA
