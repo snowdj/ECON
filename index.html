@@ -32,15 +32,10 @@ description: "while(!(succeed == try ()));"
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %}</p>
 
     <div class="post-entry">
-     <!-- {{ post.content | truncatewords: 50 | strip_html | xml_escape}} -->
+     <!-- {{ post.content | truncatewords: 50 | strip_html | xml_escape}}    
+
+	-->
 	    
-    {% if post.content contains '<!--more-->' %}
-        {{ post.content | split:'<!--more-->' | first }}
-    {% else %}
-        {{ post.excerpt }}
-    {% endif %}
-	    
-	  <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">Read More</a>
     </div>
 </div>
 <hr>
