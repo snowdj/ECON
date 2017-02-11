@@ -8,9 +8,9 @@ tags:
   - macroeconomics
 comments: true
 ---
-## A New Post
+## Two things about employment
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+今天早上，看到
 
 
 
