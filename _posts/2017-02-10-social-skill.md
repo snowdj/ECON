@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: 'The wage, social skill, and rise of womem'
 category: Labor economics
