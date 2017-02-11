@@ -10,7 +10,7 @@ comments: true
 ---
 ## Two things about employment
 
-今天早上，看到
+今天早上，看到新闻，加拿大
 
 
 
