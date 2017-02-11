@@ -18,6 +18,6 @@ comments: true
 
 
 <div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/26818098/?autostart=false" frameborder="0"></iframe>
+  <iframe allowtransparency="true" width="485" height="402" src="https://kankandou.com/" frameborder="0"></iframe>
   ![](space-final.png)
 </div>
