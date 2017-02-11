@@ -17,6 +17,13 @@ comments: true
 <!-- more -->
 
 
+
+<div class="video-container">
+    <iframe src="http://www.youtube.com/embed/4aQwT3n2c1Q" height="315" width="560" allowfullscreen="" frameborder="0">
+    </iframe>
+</div>
+
+
 <div class="scratch-preview">
   <iframe allowtransparency="true" width="298" height="402" src="https://kankandou.com/" frameborder="0"></iframe>
   ![](space-final.png)
@@ -28,3 +35,6 @@ comments: true
 {% raw %}
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=29750802&auto=0&height=32"></iframe>
 {% endraw %}
+
+
+http://stackoverflow.com/questions/31660273/markdown-jekyll-insert-an-iframe-that-fills-the-container
