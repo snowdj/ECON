@@ -1,5 +1,14 @@
 ---
 published: false
+layout: post
+title: Stata for time series
+category: time series
+tags:
+  - time series
+  - stata
+  - econ501
+  - macroeconomics
+  - econometrics
 ---
 Next ECON501 lab,I am going to talk about time series.
 
