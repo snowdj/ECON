@@ -11,37 +11,22 @@ img/test.jpg
 ---
 ## Two things about employment
 
-今天早上，看到新闻，加拿大
-
-
+今天早上，看到新闻，加拿大失业率下降，经济好转。但是，也有问题，就是年轻人失业问题依然严重，而且即使工作，收入也不足以支持，养家糊口。大学毕业工作以后，仍然父母居住在一起的比例上升。同时，本周来本系做job market talk的candidate的课题，是就业转型。 其惊悚的标题是，“The end of man, and the rise of women”。 男性的终结，和女性的崛起。他专门做劳动力市场的转型。这回找了个辣么犀利的topic来做job market talk。看来是信心十足。不怕冒险。
 
 <!-- more -->
+前面第一个关于加拿大就业的问题，不只加拿大有。日本，欧猪，几个国家，特别严重。年轻人失业加上长期就业机会减少，短期就业增加，以及由此带来的社会问题，涉及到家庭组成、子女抚养等问题。可以找出一大堆题目来做。
 
+而本周来报告的小哥，讲的女性的崛起，大概是其中最有意思的一个。他的模型，大体都是regression就能完成，但是其问题的identification和model的specification，十分讲究。排除了各种可能，终于确定social skill是女性崛起的重要因素。本来，本系就有众多劳动计量经济学的学家，谁都能提出点问题。居然，也没有难道小哥。基本上都能兵来将挡水来土掩。回答的还算是严密，显出会家子的本色。毕竟人家在这个领域浸淫多年，是老司机了。一般半桶子的劳动经济学家，是难不倒的。
+简单来讲，小哥区分了几种劳动力市场：
+ - 高技术、高认知能力；
+ - 重复性，低技术能力；
+ - 完全体力活。
+ 
+前2,30年来，出现了两极分化的结果。大概，中间的工作，都分流到发展中国家，像中国印度去了。现在，高技术和体力活比重上升。
+而与此同时，出现了女性在高技术行业，就业增多，而男性相对减少的趋势。男司机，你让一让，女司机上路了。
 
+然后，小哥进一步排除了其他几种可能，几种到女司机，能上高速路，是因为social skill能力强。女司机能说会道，交游广阔，都成了优点。
+小哥再进一步，证明不是因为女性多了，高级行业中，social skill普遍更强了。
+而是，因为高级市场对social skill的需求demand增加了，所以，女性才更有机会。
+要证明这一点，他control了其他变量，然后regression的结果是， social skill对wage工资的影响是正。 说明，是需求侧的驱动，而不是供给侧的影响。
 
-
-<iframe width="420" height="315" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-
-
-<div class="video-container">
-    <iframe src="http://www.youtube.com/embed/4aQwT3n2c1Q" height="315" width="560" allowfullscreen="" frameborder="0">
-    </iframe>
-</div>
-
-
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="298" height="402" src="https://kankandou.com/" frameborder="0"></iframe>
-  ![](space-final.png)
-</div>
-
-
-
-
-{% raw %}
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=29750802&auto=0&height=32"></iframe>
-{% endraw %}
-
-<iframe width="480" height="360" src="http://www.youtube.com/embed/WO82PoAczTc" frameborder="0"> </iframe>
-
-
-http://stackoverflow.com/questions/31660273/markdown-jekyll-insert-an-iframe-that-fills-the-container
