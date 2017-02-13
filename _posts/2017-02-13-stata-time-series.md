@@ -38,6 +38,8 @@ Since we are going to use stata for our assignment and project, I am going to in
 
 ## Stata
 
+[Time series command list](http://www.stata-press.com/manuals/ts_time_series.pdf) 
+
  [import data](http://pages.stern.nyu.edu/~dbackus/3386/Data/PWT/importPWT_description.txt) into stata.
  
  [Stata for MRes/PhD Students](http://personal.lse.ac.uk/lembcke/teaching.html)
