@@ -36,6 +36,8 @@ Since we are going to use stata for our assignment and project, I am going to in
 
 [Time series filter](http://fmwww.bc.edu/repec/nasug2006/TSFiltering_beamer.pdf)
 
+[Hodrick–Prescott filter](https://en.wikipedia.org/wiki/Hodrick%E2%80%93Prescott_filter)
+
 ## Stata
 
 [Time series command list](http://www.stata-press.com/manuals/ts_time_series.pdf) 
