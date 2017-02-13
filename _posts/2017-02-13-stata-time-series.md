@@ -17,7 +17,7 @@ Since we are going to use stata for our assignment and project, I am going to in
 
 ## Time series
 
-[DW time series introduction](http://www.ssc.upenn.edu/~fdiebold/Teaching104/Ch14_slides.pdf)
+[SW time series introduction](http://www.ssc.upenn.edu/~fdiebold/Teaching104/Ch14_slides.pdf)
 
 
 [Queens TIME SERIES WITH STATA](http://econ.queensu.ca/faculty/gregory/econ452/manual.pdf)
