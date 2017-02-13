@@ -6,7 +6,11 @@ tags:
   - linear-algebra
 mathjax: true
 published: true
+header-img: "img/home-bg6.jpg"
 ---
+
+See [Interactive Linear Transforms](http://notmatthancock.github.io/software/interactive-linear-transforms/)
+
 
 A $2 \times 2$ matrix, $A$, is a mapping, $A: \mathbb{R}^2 \mapsto \mathbb{R}^2$. To view the input and output of this function simultaneously, we'd need a 4D plot which is of course not possible. On the other hand, we can view both input and output vectors in the same plane.
 
