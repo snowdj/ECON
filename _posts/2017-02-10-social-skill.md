@@ -7,6 +7,7 @@ tags:
   - econ370
   - macroeconomics
 comments: true
+img/test.jpg
 ---
 ## Two things about employment
 
