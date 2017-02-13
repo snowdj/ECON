@@ -28,6 +28,8 @@ Since we are going to use stata for our assignment and project, I am going to in
 
 [Priceton time series data in Stata](http://dss.princeton.edu/online_help/stats_packages/stata/time_series_data.htm)
 
+
+[Basic DF test and corr graph](https://www.american.edu/ctrl/upload/Stata-Time-series-Fall-2011.pdf)
 ## Stata
  [import data](http://pages.stern.nyu.edu/~dbackus/3386/Data/PWT/importPWT_description.txt) into stata.
  
