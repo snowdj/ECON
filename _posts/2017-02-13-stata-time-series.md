@@ -50,11 +50,15 @@ Since we are going to use stata for our assignment and project, I am going to in
  
  [Time Series Analysis and Its Applications: With R Examples](http://www.stat.pitt.edu/stoffer/tsa4/)
  
+ ## EViews
+ [timeseriesMA](http://www.eco.uc3m.es/~jgonzalo/teaching/timeseriesMA.html)
  
  ## Penn 
  
  
  http://fmwww.bc.edu/repec/
+ 
+ 
  
  
  ## DF lecture
