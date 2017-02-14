@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Stata for time series
 category: time series
