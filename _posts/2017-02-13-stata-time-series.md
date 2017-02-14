@@ -49,3 +49,14 @@ Since we are going to use stata for our assignment and project, I am going to in
  ## R time series
  
  [Time Series Analysis and Its Applications: With R Examples](http://www.stat.pitt.edu/stoffer/tsa4/)
+ 
+ 
+ ## Penn 
+ 
+ 
+ http://fmwww.bc.edu/repec/
+ 
+ 
+ ## DF lecture
+ 
+ <iframe src="https://media.sas.upenn.edu/app/public/service.php?action=embed&file_id=192519&caption=&poster=&width=768&height=432&autoplay=false&start=0" width="788" height="452" scrolling="no" frameborder="0"></iframe>
