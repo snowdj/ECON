@@ -10,10 +10,15 @@ tags:
 ---
 
 
+The most economics students learn solow growth model. 
+
+<!-- more -->
+
+
 Quick summary of Solow (1956)
 =============================
 
-The following summary of the Solow model of economic growth largely follows `Romer (2011)`_.
+_The following summary of the Solow model of economic growth largely follows `Romer (2011)`_.
 
 `Romer (2011)`: http://highered.mheducation.com/sites/0073511374/index.html
 
@@ -81,6 +86,14 @@ labor.
 $$\dot{k}(t) = s f(k) - (g + n + \delta)k(t)$$
 
 That's it! The Solow model of economic growth reduced to a single non-linear ordinary differential equation.
+
+
+http://www.reed.edu/economics/parker/314/notes/314-notes-solow.pdf
+
+http://www.reed.edu/economics/parker/s11/314/book/Ch03.pdf
+
+
+
 
 https://github.com/solowPy/solowPy
 
