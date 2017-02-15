@@ -14,6 +14,8 @@ The most economics students learn solow growth model.
 
 <!-- more -->
 
+[Notebook for solow model](http://nbviewer.jupyter.org/github/jonduan/Economics_note/blob/master/macroeconomics/ECON453-Solow.ipynb)
+
 
 Quick summary of Solow (1956)
 =============================
