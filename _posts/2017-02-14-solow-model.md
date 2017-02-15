@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: The solow model in macroeconomics
 category: macroeconomics
@@ -100,5 +100,3 @@ http://www.reed.edu/economics/parker/s11/314/book/Ch03.pdf
 
 
 https://github.com/solowPy/solowPy
-
-
