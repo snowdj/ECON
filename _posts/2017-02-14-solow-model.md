@@ -89,6 +89,7 @@ That's it! The Solow model of economic growth reduced to a single non-linear ord
 
 
 #### Short version of Romer textbook
+
 http://www.reed.edu/economics/parker/314/notes/314-notes-solow.pdf
 
 http://www.reed.edu/economics/parker/s11/314/book/Ch03.pdf
