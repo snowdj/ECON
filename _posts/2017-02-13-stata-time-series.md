@@ -40,6 +40,8 @@ Since we are going to use stata for our assignment and project, I am going to in
 
 ## Stata
 
+[stata intro](http://www.ssc.wisc.edu/~bhansen/460/stata.pdf)
+
 [Time series command list](http://www.stata-press.com/manuals/ts_time_series.pdf) 
 
  [import data](http://pages.stern.nyu.edu/~dbackus/3386/Data/PWT/importPWT_description.txt) into stata.
@@ -63,4 +65,10 @@ Since we are going to use stata for our assignment and project, I am going to in
  
  ## DF lecture
  
+ 2015-09-10 ECON 221 Prof Francis Diebold.mp4.
+ 
  <iframe src="https://media.sas.upenn.edu/app/public/service.php?action=embed&file_id=192519&caption=&poster=&width=768&height=432&autoplay=false&start=0" width="788" height="452" scrolling="no" frameborder="0"></iframe>
+ 
+ 
+ 
+ 2015-09-10 ECON 221 Prof Francis Diebold.mp4.
