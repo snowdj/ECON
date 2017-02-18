@@ -40,7 +40,9 @@ Since we are going to use stata for our assignment and project, I am going to in
 
 ## Stata
 
-[stata intro](http://www.ssc.wisc.edu/~bhansen/460/stata.pdf)
+[stata intro](http://www.ssc.wisc.edu/~bhansen/460/stata.pdf) very simplified.
+
+[stata intro](http://fmwww.bc.edu/GStat/docs/StataIntro.pdf) very detailed
 
 [Time series command list](http://www.stata-press.com/manuals/ts_time_series.pdf) 
 
