@@ -19,6 +19,11 @@ layout: post
 Learn how to use optimization methodologies and modeling approaches to effectively analyze data.
 
 
+
+[cs357](https://relate.cs.illinois.edu/course/cs357-sp16/)
+
+
+
 ### Open Solver
 
 [opensolver](http://opensolver.org/using-opensolver/)
@@ -558,23 +563,3 @@ $$
                 
 \end{array}\right\}
 $$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
