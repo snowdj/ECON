@@ -1,1 +1,1 @@
-# Welcome one, this is a template modified from beautiful jekyll and eight20. 
+# This is a blog using template modified from beautiful jekyll and eight20. 
