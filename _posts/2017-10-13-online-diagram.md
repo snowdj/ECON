@@ -23,6 +23,8 @@ sequenceDiagram
 
 <div class="mermaid">
 graph LR;
+  
+  
       id0[Environmental <br> Economics]-->id1[Chap7: Benefit]
       id0[Environmental <br> Economics]-->id2[Chap8: Cost]
       id0[Environmental <br> Economics]-->id3[chap9: Criteria : <br>Evaluating Environmental Policies]
