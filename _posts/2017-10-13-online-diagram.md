@@ -21,4 +21,16 @@ sequenceDiagram
 </div>
 
 
+<div class="mermaid">
+graph LR;
+      id0[Environmental <br> Economics]-->id1[Chap7: Benefit]
+      id0[Environmental <br> Economics]-->id2[Chap8: Cost]
+      id0[Environmental <br> Economics]-->id3[chap9: Criteria : <br>Evaluating Environmental Policies]
+      id0[Environmental <br> Economics]-->id4[Chap10: Decentralized Policies:]
+      id0[Environmental <br> Economics]-->id5[Chap11: Command-and-Control: <br> Standards]
+      id0[Environmental <br> Economics]-->id6[Chap12: Incentive-Based: <br> Emission Charges and Subsidies]
+      id0[Environmental <br> Economics]-->id7[Chap13: Incentive-Based: <br> Market Trading Systems] 
+</div>
+
+
 http://codepen.io/WoJWoJ/pen/eJjrRzton for formatting help.
