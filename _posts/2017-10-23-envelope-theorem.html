@@ -1,13 +1,3 @@
----
-layout: post
-title: 6 envelope theorem
-category: Mathematics
-tags:
-  - mathematics
-  - econ350
-published: true
----
-
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
@@ -8461,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box
+/* This file is a compatability layer.  It allows the usage of flexible box 
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this
+`Modern browsers` comments below).  Browsers that are known to implement this 
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+
+    Internet Explorer 11+ 
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11243,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for
+  /* This injects handle bars (a short, wide = symbol) for 
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11686,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-
+    
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11740,14 +11730,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
@@ -11858,7 +11848,7 @@ $$d F(\bar x(\theta), \theta) =   + \underbrace{F_{\theta}(\bar x(\theta), \thet
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="For-an-optimization-problem-without-constraint,-the-F.O.C-is">For an optimization problem without constraint, the F.O.C is<a class="anchor-link" href="#For-an-optimization-problem-without-constraint,-the-F.O.C-is">&#182;</a></h3>$$ F_{\bar x}(\bar x(\theta), \theta) - \lambda G_{\bar x}(\bar x(\theta), \theta) = 0 \tag 3 $$<p>here $\lambda$ can be a vector,</p>
+<h3 id="For-an-optimization-problem-with-constraint,-the-F.O.C-is">For an optimization problem with constraint, the F.O.C is<a class="anchor-link" href="#For-an-optimization-problem-with-constraint,-the-F.O.C-is">&#182;</a></h3>$$ F_{\bar x}(\bar x(\theta), \theta) - \lambda G_{\bar x}(\bar x(\theta), \theta) = 0 \tag 3 $$<p>here $\lambda$ can be a vector,</p>
 <p>and for a F.O.T.S of $G( \bar x(\theta) + d \bar x(\theta), \theta + d \theta )$</p>
 $$G( \bar x(\theta) + d \bar x(\theta), \theta + d \theta ) = G( \bar x(\theta) , \theta ) + G_{ \bar x(\theta)} d\bar x(\theta)+ G_{\theta} d \theta  $$<p>since the constraints are still binding before perturbation and after perturbation,</p>
 $$G( \bar x(\theta) + d \bar x(\theta), \theta + d \theta ) = G( \bar x(\theta) , \theta )$$<p>then</p>
@@ -11887,14 +11877,14 @@ $$f*(r) = maxx f(x, r) for all r.$$<p>If the partial derivative f*h'(r) exists t
 $$f*h'(r)  = f'n+h(x*, r).$$<p>This result says that the change in the maximal value of the function as a parameter changes is the change caused by the direct impact of the parameter on the function, holding the value of x fixed at its optimal value; the indirect effect, resulting from the change in the optimal value of x caused by a change in the parameter, is zero.</p>
 <p>Example
 Consider the problem studied at the start of this section, in which a firm can produce output, with price p, using a single input, with price w, according to the production function f. The firm's profit when it uses the amount x of the input is $π(x, (w, p)) = pf(x) − wx$, and its maximal profit is</p>
-$$f^*(w, p) = p f(x^*(w, p)) − wx^*(w, p),$$<p>where $x*(w, p)$ is the optimal amount of the input at the prices (w, p). This function $f^*$ is known as the firm's profit function. By the envelope theorem, the derivative of this function with respect to p is the partial derivative of π with respect to p evaluated at $x = x^*(w, p)$, namely
+$$f^*(w, p) = p f(x^*(w, p)) − wx^*(w, p),$$<p>where $x*(w, p)$ is the optimal amount of the input at the prices (w, p). This function $f^*$ is known as the firm's profit function. By the envelope theorem, the derivative of this function with respect to p is the partial derivative of π with respect to p evaluated at $x = x^*(w, p)$, namely 
 $f(x^*(w, p))$.</p>
-<p>In particular, the derivative is positive: if the price of output increases, then the firm's maximal profit increases.
+<p>In particular, the derivative is positive: if the price of output increases, then the firm's maximal profit increases. 
 Also by the envelope theorem the derivative of the firm's maximal profit with respect to w is $−x^*(p, w)$.</p>
 <p>(This result is known as Hotelling's Lemma, after Harold Hotelling, 1895–1973.) In particular, this derivative is negative: if the price of the input increases, then the firm's maximal profit decreases.</p>
 <p>A consequence of Hotelling's Lemma is that we can easily find the firm's input demand function $x*$ if we know the firm's profit function, even if we do not know the firm's production function: we have $x^*(p, w) = −π^* w'(p, w) for all (p, w)$, so we may obtain the input demand function by simply differentiating the profit function.</p>
 <p>Proposition (Envelope theorem for constrained maximization problems)
-Let $f$ and $g1, ..., gm$ be continuously differentiable functions of $n + k$ variables, with m ≤ n. Suppose that for all values of the k-vector r the problem
+Let $f$ and $g1, ..., gm$ be continuously differentiable functions of $n + k$ variables, with m ≤ n. Suppose that for all values of the k-vector r the problem 
 $max_x f(x, r)$ subject to $g_j(x, r) = 0 for j = 1, ..., m$,
 where x is an n-vector, has a unique solution, which is differentiable in r. Denote this solution $x^*(r)$ and define the function $f^*$ of $k$ variables by</p>
 $$f*(r)  = maxx f(x, r) subject to gj(x, r) = 0 for j = 1, ..., m.$$<p>Suppose that the rank of the $m × n$ matrix in which the $(i, j)$th component is $(∂gj/∂xi)(x^*(r), r)$ is m. Define the function L by</p>
@@ -11902,14 +11892,14 @@ $$L(x, λ, r)  = f(x, r) − ∑^m_{j=1}λ_{j}g_{j}(x, r) for every (x, λ, r),$
 $$f*h'(r) = L'_{n+m+h}(x*(r), λ(r), r) for h = 1, ..., k,$$<p>where $λ(r) = (λ_1(r), ..., λ_m(r))$ and $λ_j(r)$ is the value of Lagrange multiplier associated with the jth constraint at the solution of the problem.</p>
 <p>Example</p>
 <p>Consider a utility maximization problem:</p>
-$$max_x u(x) subject to p·x = w.$$<p>where x is a vector (a bundle of goods), p is the price vector, and w is the consumer's wealth (a number). Denote the solution of the problem by x<em>(p, w), and denote the value function by v, so that
+$$max_x u(x) subject to p·x = w.$$<p>where x is a vector (a bundle of goods), p is the price vector, and w is the consumer's wealth (a number). Denote the solution of the problem by x<em>(p, w), and denote the value function by v, so that 
 $$v(p, w) = u(x</em>(p, w)) for every (p, w).$$
-The function v is known as the indirect utility function.
-By the envelope theorem for constrained maximization problems we have
+The function v is known as the indirect utility function. 
+By the envelope theorem for constrained maximization problems we have 
 $$(∂v/∂pi)(p, w) = −λ^<em>(p, w)x_i^</em>(p, w)$$
-(since u does not depend independently on p or w) and
+(since u does not depend independently on p or w) and 
 $$(∂v/∂w)(p, w) = λ^<em>(p, w).$$
-Thus
+Thus 
 $$\frac{(∂v/∂pi)(p, w)}{(∂v/∂w)(p, w)}  = −x_i^</em>(p, w).$$</p>
 <p>That is, if you know the indirect utility function then you can recover the demand functions. This result is known as Roy's identity (after René Roy, 1894–1977).</p>
 <p><a href="https://economics.stackexchange.com/questions/13267/understanding-the-envelope-theorem">https://economics.stackexchange.com/questions/13267/understanding-the-envelope-theorem</a></p>
@@ -12206,7 +12196,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol1</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">L1</span><span class="p">,</span><span class="n">L2</span><span class="p">,</span><span class="n">Llam</span><span class="p">],</span> <span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span><span class="nb">dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sol1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sol1</span>
 </pre></div>
 
 </div>
@@ -12219,7 +12209,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12246,7 +12236,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12259,7 +12249,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">La</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">lam</span><span class="p">:</span><span class="n">sol1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">lam</span><span class="p">],</span><span class="n">x2</span><span class="p">:</span><span class="n">sol1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">x2</span><span class="p">]})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">La</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">lam</span><span class="p">:</span><span class="n">sol1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">lam</span><span class="p">],</span><span class="n">x2</span><span class="p">:</span><span class="n">sol1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x2</span><span class="p">]})</span>
 </pre></div>
 
 </div>
@@ -12272,7 +12262,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12355,7 +12345,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol2</span> <span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">L1</span><span class="p">,</span><span class="n">L2</span><span class="p">,</span><span class="n">Llam</span><span class="p">],</span> <span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span><span class="nb">dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">sol2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sol2</span>
 </pre></div>
 
 </div>
@@ -12382,7 +12372,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12395,7 +12385,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">La</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">lam</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">lam</span><span class="p">],</span><span class="n">x1</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">x1</span><span class="p">]})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">La</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">lam</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">lam</span><span class="p">],</span><span class="n">x1</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x1</span><span class="p">]})</span>
 </pre></div>
 
 </div>
@@ -12408,7 +12398,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">La</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">lam</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">lam</span><span class="p">],</span><span class="n">x1</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">x1</span><span class="p">]}))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">La</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">lam</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">lam</span><span class="p">],</span><span class="n">x1</span><span class="p">:</span><span class="n">sol2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x1</span><span class="p">]}))</span>
 </pre></div>
 
 </div>
@@ -12421,7 +12411,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">x1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x1</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -12434,7 +12424,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sol1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">x1</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sol1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x1</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12447,7 +12437,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">lam</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sol1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">lam</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -12460,7 +12450,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12473,7 +12463,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12486,7 +12476,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12499,7 +12489,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12512,7 +12502,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12525,7 +12515,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12538,7 +12528,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12584,7 +12574,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12597,7 +12587,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12610,7 +12600,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12623,7 +12613,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
 </div>
@@ -12635,7 +12625,7 @@ $$V(p_x,p_y,w)=U(x(p_x,p_y,w), y(p_x,p_y,w))+\lambda(p_x,p_y,w)[w-p_x-p_y]$$
   </div>
 </body>
 
-
+ 
 
 
 </html>
